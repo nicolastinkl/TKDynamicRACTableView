@@ -1,0 +1,99 @@
+PODS:
+  - AFNetworking (2.2.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking-RACExtensions (0.1.4):
+    - AFNetworking (~> 2.0)
+    - ReactiveCocoa (~> 2.0)
+  - AFNetworking/NSURLConnection (2.2.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.2.3):
+    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (2.2.3)
+  - AFNetworking/Security (2.2.3)
+  - AFNetworking/Serialization (2.2.3)
+  - AFNetworking/UIKit (2.2.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - CHTCollectionViewWaterfallLayout (0.7)
+  - EGOCache (2.0)
+  - Expecta (0.2.4)
+  - iOS-WebP (0.3)
+  - JSONKit (1.5pre)
+  - JSONModel (0.13.0)
+  - MHPrettyDate (1.1.1)
+  - Objection (1.4)
+  - OCMock (2.2.4)
+  - ReactiveCocoa (2.3):
+    - ReactiveCocoa/UI
+  - ReactiveCocoa/Core (2.3):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.3)
+  - ReactiveCocoa/UI (2.3):
+    - ReactiveCocoa/Core
+  - ReactiveViewModel (0.2):
+    - ReactiveCocoa (~> 2.1)
+  - SDWebImage (3.6):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.6)
+  - Specta (0.2.1)
+  - SVProgressHUD (1.0)
+  - SVPullToRefresh (0.4.1)
+  - TTTAttributedLabel (1.9.5)
+  - UALogger (0.3)
+  - UIColor-Utilities (1.0.1)
+  - UIView+AutoLayout (1.3.0)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.2.3)
+  - AFNetworking-RACExtensions (~> 0.1)
+  - CHTCollectionViewWaterfallLayout (~> 0.4)
+  - EGOCache (~> 2.0)
+  - Expecta (~> 0.2.3)
+  - iOS-WebP (~> 0.3)
+  - JSONKit (~> 1.5pre)
+  - JSONModel (~> 0.13)
+  - MHPrettyDate
+  - Objection (~> 1.4)
+  - OCMock (~> 2.2.1)
+  - ReactiveCocoa (~> 2.3)
+  - ReactiveViewModel (~> 0.2)
+  - SDWebImage (~> 3.6)
+  - Specta (~> 0.2.1)
+  - SVProgressHUD (~> 1.0)
+  - SVPullToRefresh (~> 0.4)
+  - TTTAttributedLabel
+  - UALogger (~> 0.3)
+  - UIColor-Utilities (= 1.0.1)
+  - UIView+AutoLayout
+
+SPEC CHECKSUMS:
+  AFNetworking: ae513199cca79e9d7af2708ccabe2ed075550c42
+  AFNetworking-RACExtensions: 37adcfb7bc8adebe736ee024e74859ad38cca9c1
+  CHTCollectionViewWaterfallLayout: a637d6271c9e8a2605bec8135d14e73e3a48288f
+  EGOCache: c7116e8a6692eecb542f001a9c71f9b71ae9644b
+  Expecta: 5c147dedfea5fbcf773995f7e65020abcc936ce5
+  iOS-WebP: 356820dc7c8dbc42aae156715d7c709de1fec072
+  JSONKit: b1f52f3f522b8602307769511d4fb47c6f856159
+  JSONModel: 1ce27c7d59de0ada0048e64f20006ce02e9ce73d
+  MHPrettyDate: 0486e5e1ddff296748b7a71cd78c9cc785a80cc5
+  Objection: 73024a5572e6d14276289ed3761039476d746c39
+  OCMock: 5008fae4b4789b8fc3e48cd7660f2eb5ef8ce89e
+  ReactiveCocoa: dde7b11a14954edf789e7343b2c32e595caabd01
+  ReactiveViewModel: f636ab3e06b5e69664b69c883fcdb457ab5cb0cb
+  SDWebImage: 7eb273e54ca8a2e506ad9bd5e80c35b2a4d7c95e
+  Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
+  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
+  SVPullToRefresh: 61a0e4bd12bd6f8e3465909810b0fbeb1a28d5f2
+  TTTAttributedLabel: 6154fd2407a03fb8d71abfa36f4710fff26a168e
+  UALogger: c364904b0ed718ac60ae04912bc604302f87f11f
+  UIColor-Utilities: 5c2076b975f423097011aeea4012e75857dd9c99
+  UIView+AutoLayout: 43373a18797954fd8ee3b1423af364f1b80a2af8
+
+COCOAPODS: 0.32.1
