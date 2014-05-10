@@ -1,7 +1,6 @@
 # CellMoreCommentsLikesView
   
-![Mou icon](http://kidswant.u.qiniudn.com/Ft1txuOsaWMKDg5T53yfnBu9VGc1)
-![Mou icon](http://kidswant.u.qiniudn.com/Ft8eQjdbXY-MlhLcRNNjOfzZDEV9)
+![Mou icon](http://TK.u.qiniudn.com/Ft1txuOsaWMKDg5T)
 
 
 ## Requirements
@@ -21,7 +20,7 @@ It probably will work with iOS 6, I have not tried,but  it is not using any iOS7
 
 if you have some Question to ask me, you can contact email <nicolastinkl@gmail.com> link.
 
-or see blogs <http://www.cnblogs.com/tinkl/p/3573454.html>
+or see blogs <http://www.cnblogs.com/tinkl/>
 
 [id]: http://mouapp.com "Markdown editor on Mac OS X"
 
