@@ -30,15 +30,7 @@ or see blogs <http://www.cnblogs.com/tinkl/>
 Just see this:
 
 
-
-- @interface XCJHomeDynamicViewController : BaseDetailViewController
-
--	on viewDidLoad call
--	  init data with parent viewcontroller
--    [self.refreshView beginRefreshing];
-
-
-
+~~change~~
 
 
 ####  Features
@@ -64,7 +56,7 @@ Just see this:
 
 
 
-1.0 - 2014/02/04
+1.0.0 - 2014/02/04
 ----------
 
 Initial release
