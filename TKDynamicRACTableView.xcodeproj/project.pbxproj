@@ -25,8 +25,15 @@
 		93A65C1D191E318000B1BE2A /* logo-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A65C1A191E318000B1BE2A /* logo-120.png */; };
 		93A65C1E191E318000B1BE2A /* logo-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A65C1B191E318000B1BE2A /* logo-58.png */; };
 		93A65C1F191E318000B1BE2A /* logo-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A65C1C191E318000B1BE2A /* logo-80.png */; };
-		93A65C22191E32F900B1BE2A /* ip4.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A65C20191E32F900B1BE2A /* ip4.png */; };
+		93A65C22191E32F900B1BE2A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A65C20191E32F900B1BE2A /* Default.png */; };
 		93A65C23191E32F900B1BE2A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A65C21191E32F900B1BE2A /* Default-568h@2x.png */; };
+		93A65C2D191E3C9900B1BE2A /* TKFeedTitleInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C2B191E3C9900B1BE2A /* TKFeedTitleInfoCell.m */; };
+		93A65C2E191E3C9900B1BE2A /* TKFeedTitleInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A65C2C191E3C9900B1BE2A /* TKFeedTitleInfoCell.xib */; };
+		93A65C37191E3E1D00B1BE2A /* TKFeedTitleInfoCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C36191E3E1D00B1BE2A /* TKFeedTitleInfoCellViewModel.m */; };
+		93A65C3A191E3F2300B1BE2A /* TKPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C39191E3F2300B1BE2A /* TKPost.m */; };
+		93A65C3D191E427A00B1BE2A /* TKComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C3C191E427A00B1BE2A /* TKComment.m */; };
+		93A65C40191E428F00B1BE2A /* TKLike.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C3F191E428F00B1BE2A /* TKLike.m */; };
+		93A65C43191E43BB00B1BE2A /* TKAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C42191E43BB00B1BE2A /* TKAPIManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,9 +70,22 @@
 		93A65C1A191E318000B1BE2A /* logo-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-120.png"; sourceTree = "<group>"; };
 		93A65C1B191E318000B1BE2A /* logo-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-58.png"; sourceTree = "<group>"; };
 		93A65C1C191E318000B1BE2A /* logo-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-80.png"; sourceTree = "<group>"; };
-		93A65C20191E32F900B1BE2A /* ip4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ip4.png; sourceTree = "<group>"; };
+		93A65C20191E32F900B1BE2A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		93A65C21191E32F900B1BE2A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		93A65C25191E393700B1BE2A /* TKUtilsMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUtilsMacro.h; sourceTree = "<group>"; };
+		93A65C2A191E3C9900B1BE2A /* TKFeedTitleInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFeedTitleInfoCell.h; sourceTree = "<group>"; };
+		93A65C2B191E3C9900B1BE2A /* TKFeedTitleInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFeedTitleInfoCell.m; sourceTree = "<group>"; };
+		93A65C2C191E3C9900B1BE2A /* TKFeedTitleInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKFeedTitleInfoCell.xib; sourceTree = "<group>"; };
+		93A65C35191E3E1D00B1BE2A /* TKFeedTitleInfoCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFeedTitleInfoCellViewModel.h; sourceTree = "<group>"; };
+		93A65C36191E3E1D00B1BE2A /* TKFeedTitleInfoCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFeedTitleInfoCellViewModel.m; sourceTree = "<group>"; };
+		93A65C38191E3F2300B1BE2A /* TKPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPost.h; sourceTree = "<group>"; };
+		93A65C39191E3F2300B1BE2A /* TKPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPost.m; sourceTree = "<group>"; };
+		93A65C3B191E427A00B1BE2A /* TKComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKComment.h; sourceTree = "<group>"; };
+		93A65C3C191E427A00B1BE2A /* TKComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKComment.m; sourceTree = "<group>"; };
+		93A65C3E191E428F00B1BE2A /* TKLike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKLike.h; sourceTree = "<group>"; };
+		93A65C3F191E428F00B1BE2A /* TKLike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKLike.m; sourceTree = "<group>"; };
+		93A65C41191E43BB00B1BE2A /* TKAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAPIManager.h; sourceTree = "<group>"; };
+		93A65C42191E43BB00B1BE2A /* TKAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAPIManager.m; sourceTree = "<group>"; };
 		DDC07F4040324443985BB4F4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -195,6 +215,12 @@
 		93A65C14191E311400B1BE2A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				93A65C34191E3D3000B1BE2A /* PHOTO_CELL */,
+				93A65C33191E3D0400B1BE2A /* USEREVENT_CELL */,
+				93A65C32191E3CFC00B1BE2A /* LIKES_CELL */,
+				93A65C31191E3CF300B1BE2A /* CAPTEION_CELL */,
+				93A65C30191E3CE400B1BE2A /* COMMENT_CELL */,
+				93A65C2F191E3CD200B1BE2A /* TITLE_CELL */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -202,6 +228,12 @@
 		93A65C15191E311400B1BE2A /* JsonItems */ = {
 			isa = PBXGroup;
 			children = (
+				93A65C38191E3F2300B1BE2A /* TKPost.h */,
+				93A65C39191E3F2300B1BE2A /* TKPost.m */,
+				93A65C3B191E427A00B1BE2A /* TKComment.h */,
+				93A65C3C191E427A00B1BE2A /* TKComment.m */,
+				93A65C3E191E428F00B1BE2A /* TKLike.h */,
+				93A65C3F191E428F00B1BE2A /* TKLike.m */,
 			);
 			path = JsonItems;
 			sourceTree = "<group>";
@@ -209,6 +241,8 @@
 		93A65C16191E311400B1BE2A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				93A65C41191E43BB00B1BE2A /* TKAPIManager.h */,
+				93A65C42191E43BB00B1BE2A /* TKAPIManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -216,6 +250,7 @@
 		93A65C17191E311400B1BE2A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				93A65C29191E3BE000B1BE2A /* MainView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -231,7 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				93A65C1A191E318000B1BE2A /* logo-120.png */,
-				93A65C20191E32F900B1BE2A /* ip4.png */,
+				93A65C20191E32F900B1BE2A /* Default.png */,
 				93A65C21191E32F900B1BE2A /* Default-568h@2x.png */,
 				93A65C1B191E318000B1BE2A /* logo-58.png */,
 				93A65C1C191E318000B1BE2A /* logo-80.png */,
@@ -245,6 +280,60 @@
 				93A65C25191E393700B1BE2A /* TKUtilsMacro.h */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		93A65C29191E3BE000B1BE2A /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MainView;
+			sourceTree = "<group>";
+		};
+		93A65C2F191E3CD200B1BE2A /* TITLE_CELL */ = {
+			isa = PBXGroup;
+			children = (
+				93A65C2A191E3C9900B1BE2A /* TKFeedTitleInfoCell.h */,
+				93A65C2B191E3C9900B1BE2A /* TKFeedTitleInfoCell.m */,
+				93A65C2C191E3C9900B1BE2A /* TKFeedTitleInfoCell.xib */,
+				93A65C35191E3E1D00B1BE2A /* TKFeedTitleInfoCellViewModel.h */,
+				93A65C36191E3E1D00B1BE2A /* TKFeedTitleInfoCellViewModel.m */,
+			);
+			name = TITLE_CELL;
+			sourceTree = "<group>";
+		};
+		93A65C30191E3CE400B1BE2A /* COMMENT_CELL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = COMMENT_CELL;
+			sourceTree = "<group>";
+		};
+		93A65C31191E3CF300B1BE2A /* CAPTEION_CELL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CAPTEION_CELL;
+			sourceTree = "<group>";
+		};
+		93A65C32191E3CFC00B1BE2A /* LIKES_CELL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = LIKES_CELL;
+			sourceTree = "<group>";
+		};
+		93A65C33191E3D0400B1BE2A /* USEREVENT_CELL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = USEREVENT_CELL;
+			sourceTree = "<group>";
+		};
+		93A65C34191E3D3000B1BE2A /* PHOTO_CELL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PHOTO_CELL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,8 +420,9 @@
 				93A65C1D191E318000B1BE2A /* logo-120.png in Resources */,
 				93A65C1F191E318000B1BE2A /* logo-80.png in Resources */,
 				93A65BF5191E2C4800B1BE2A /* Images.xcassets in Resources */,
+				93A65C2E191E3C9900B1BE2A /* TKFeedTitleInfoCell.xib in Resources */,
 				93A65BE7191E2C4800B1BE2A /* InfoPlist.strings in Resources */,
-				93A65C22191E32F900B1BE2A /* ip4.png in Resources */,
+				93A65C22191E32F900B1BE2A /* Default.png in Resources */,
 				93A65BF0191E2C4800B1BE2A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,8 +476,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A65BF3191E2C4800B1BE2A /* TKViewController.m in Sources */,
+				93A65C2D191E3C9900B1BE2A /* TKFeedTitleInfoCell.m in Sources */,
 				93A65BE9191E2C4800B1BE2A /* main.m in Sources */,
+				93A65C37191E3E1D00B1BE2A /* TKFeedTitleInfoCellViewModel.m in Sources */,
+				93A65C3D191E427A00B1BE2A /* TKComment.m in Sources */,
+				93A65C3A191E3F2300B1BE2A /* TKPost.m in Sources */,
 				93A65BED191E2C4800B1BE2A /* TKAppDelegate.m in Sources */,
+				93A65C40191E428F00B1BE2A /* TKLike.m in Sources */,
+				93A65C43191E43BB00B1BE2A /* TKAPIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
