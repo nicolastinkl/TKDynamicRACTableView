@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface TKViewController : UIViewController
+#import "TKProtocol.h"
+/*!
+ *  <#Description#>
+ */
+@interface TKViewController : UIViewController<TKViewControllerProtocol>
 
 @end

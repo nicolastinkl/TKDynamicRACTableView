@@ -8,13 +8,33 @@
 
 #import "TKAppDelegate.h"
 
+#import "TKProtocol.h"
+#import <Objection.h>
+
 @implementation TKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    [self setupRootViewController];
     // Override point for customization after application launch.
     return YES;
 }
+
+- (void)setupRootViewController
+{
+    UIViewController <TKViewControllerProtocol> *waterfallViewController = [[JSObjection defaultInjector] getObject:@protocol(TKViewControllerProtocol)];
+    [waterfallViewController configureWithLatest];
+    
+    UINavigationController *tabViewController = [[UINavigationController alloc] initWithRootViewController:waterfallViewController];
+    
+    self.window.rootViewController = tabViewController;
+}
+
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

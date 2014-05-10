@@ -34,6 +34,8 @@
 		93A65C3D191E427A00B1BE2A /* TKComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C3C191E427A00B1BE2A /* TKComment.m */; };
 		93A65C40191E428F00B1BE2A /* TKLike.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C3F191E428F00B1BE2A /* TKLike.m */; };
 		93A65C43191E43BB00B1BE2A /* TKAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C42191E43BB00B1BE2A /* TKAPIManager.m */; };
+		93A65C47191E4B1F00B1BE2A /* TKViewControllerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C46191E4B1F00B1BE2A /* TKViewControllerModule.m */; };
+		93A65C4A191E4B8100B1BE2A /* TKViewControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C49191E4B8100B1BE2A /* TKViewControllerModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +61,8 @@
 		93A65BEB191E2C4800B1BE2A /* TKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKAppDelegate.h; sourceTree = "<group>"; };
 		93A65BEC191E2C4800B1BE2A /* TKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKAppDelegate.m; sourceTree = "<group>"; };
 		93A65BEF191E2C4800B1BE2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		93A65BF1191E2C4800B1BE2A /* TKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKViewController.h; sourceTree = "<group>"; };
-		93A65BF2191E2C4800B1BE2A /* TKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKViewController.m; sourceTree = "<group>"; };
+		93A65BF1191E2C4800B1BE2A /* TKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TKViewController.h; path = ../TKViewController.h; sourceTree = "<group>"; };
+		93A65BF2191E2C4800B1BE2A /* TKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TKViewController.m; path = ../TKViewController.m; sourceTree = "<group>"; };
 		93A65BF4191E2C4800B1BE2A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		93A65BFA191E2C4800B1BE2A /* TKDynamicRACTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TKDynamicRACTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A65BFB191E2C4800B1BE2A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -86,6 +88,11 @@
 		93A65C3F191E428F00B1BE2A /* TKLike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKLike.m; sourceTree = "<group>"; };
 		93A65C41191E43BB00B1BE2A /* TKAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAPIManager.h; sourceTree = "<group>"; };
 		93A65C42191E43BB00B1BE2A /* TKAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAPIManager.m; sourceTree = "<group>"; };
+		93A65C44191E4A7800B1BE2A /* TKProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKProtocol.h; sourceTree = "<group>"; };
+		93A65C45191E4B1F00B1BE2A /* TKViewControllerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKViewControllerModule.h; sourceTree = "<group>"; };
+		93A65C46191E4B1F00B1BE2A /* TKViewControllerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKViewControllerModule.m; sourceTree = "<group>"; };
+		93A65C48191E4B8100B1BE2A /* TKViewControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKViewControllerModel.h; sourceTree = "<group>"; };
+		93A65C49191E4B8100B1BE2A /* TKViewControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKViewControllerModel.m; sourceTree = "<group>"; };
 		DDC07F4040324443985BB4F4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,8 +168,6 @@
 				93A65BEB191E2C4800B1BE2A /* TKAppDelegate.h */,
 				93A65BEC191E2C4800B1BE2A /* TKAppDelegate.m */,
 				93A65BEE191E2C4800B1BE2A /* Main.storyboard */,
-				93A65BF1191E2C4800B1BE2A /* TKViewController.h */,
-				93A65BF2191E2C4800B1BE2A /* TKViewController.m */,
 				93A65BF4191E2C4800B1BE2A /* Images.xcassets */,
 				93A65BE3191E2C4800B1BE2A /* Supporting Files */,
 			);
@@ -258,6 +263,7 @@
 		93A65C18191E311400B1BE2A /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				93A65C44191E4A7800B1BE2A /* TKProtocol.h */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -285,6 +291,12 @@
 		93A65C29191E3BE000B1BE2A /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				93A65BF1191E2C4800B1BE2A /* TKViewController.h */,
+				93A65BF2191E2C4800B1BE2A /* TKViewController.m */,
+				93A65C45191E4B1F00B1BE2A /* TKViewControllerModule.h */,
+				93A65C46191E4B1F00B1BE2A /* TKViewControllerModule.m */,
+				93A65C48191E4B8100B1BE2A /* TKViewControllerModel.h */,
+				93A65C49191E4B8100B1BE2A /* TKViewControllerModel.m */,
 			);
 			name = MainView;
 			sourceTree = "<group>";
@@ -482,7 +494,9 @@
 				93A65C3D191E427A00B1BE2A /* TKComment.m in Sources */,
 				93A65C3A191E3F2300B1BE2A /* TKPost.m in Sources */,
 				93A65BED191E2C4800B1BE2A /* TKAppDelegate.m in Sources */,
+				93A65C47191E4B1F00B1BE2A /* TKViewControllerModule.m in Sources */,
 				93A65C40191E428F00B1BE2A /* TKLike.m in Sources */,
+				93A65C4A191E4B8100B1BE2A /* TKViewControllerModel.m in Sources */,
 				93A65C43191E43BB00B1BE2A /* TKAPIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
