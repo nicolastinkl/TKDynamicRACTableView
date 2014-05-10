@@ -1,13 +1,12 @@
-# CellMoreCommentsLikesView
+# TKDynamicRACTableView
   
 ![Mou icon](http://TK.u.qiniudn.com/Ft1txuOsaWMKDg5T)
 
 ## Requirements
 
-**tinkl**, is some of my experiences,hope that can help *ios  developers*.
-So, thanks my friend <molon> molon.
+**tinkl**, is some of my experiences,hope that can help *ios  developers*.make the word be better and easier
 
-**RemoteMessageListOperator** uses ARC and requires iOS 7.0+.
+**TKDynamicRACTableView** uses ARC and requires iOS 7.0+.
 
 It probably will work with iOS 6, I have not tried,but  it is not using any iOS7 specific APIs.
  
