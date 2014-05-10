@@ -1,7 +1,11 @@
 # CellMoreCommentsLikesView
   
+<<<<<<< HEAD
 ![Mou icon](http://TK.u.qiniudn.com/Ft1txuOsaWMKDg5T)
 
+=======
+![Mou icon](http://xxxx
+>>>>>>> 37b5166d5a8cde88bb3c88e4eeccfd45305c9f9e
 
 ## Requirements
 
