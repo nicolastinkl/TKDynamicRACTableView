@@ -1,8 +1,6 @@
 # CellMoreCommentsLikesView
   
-![Mou icon](http://kidswant.u.qiniudn.com/Ft1txuOsaWMKDg5T53yfnBu9VGc1)
-![Mou icon](http://kidswant.u.qiniudn.com/Ft8eQjdbXY-MlhLcRNNjOfzZDEV9)
-
+![Mou icon](http://xxxx
 
 ## Requirements
 
