@@ -16,7 +16,6 @@
 		93A65BED191E2C4800B1BE2A /* TKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65BEC191E2C4800B1BE2A /* TKAppDelegate.m */; };
 		93A65BF0191E2C4800B1BE2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A65BEE191E2C4800B1BE2A /* Main.storyboard */; };
 		93A65BF3191E2C4800B1BE2A /* TKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65BF2191E2C4800B1BE2A /* TKViewController.m */; };
-		93A65BF5191E2C4800B1BE2A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A65BF4191E2C4800B1BE2A /* Images.xcassets */; };
 		93A65BFC191E2C4800B1BE2A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A65BFB191E2C4800B1BE2A /* XCTest.framework */; };
 		93A65BFD191E2C4900B1BE2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A65BDC191E2C4800B1BE2A /* Foundation.framework */; };
 		93A65BFE191E2C4900B1BE2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A65BE0191E2C4800B1BE2A /* UIKit.framework */; };
@@ -59,6 +58,10 @@
 		93AE90A2191F380E00B61411 /* UIImageView+Masking.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9097191F380E00B61411 /* UIImageView+Masking.m */; };
 		93AE90A3191F380E00B61411 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9099191F380E00B61411 /* UIView+Layout.m */; };
 		93AE90A4191F380E00B61411 /* UIView+SuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE909B191F380E00B61411 /* UIView+SuperView.m */; };
+		93AE90A7191F3DD900B61411 /* image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93AE90A6191F3DD900B61411 /* image.xcassets */; };
+		93AE90AA191F3FEC00B61411 /* TKCategroiesTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE90A9191F3FEC00B61411 /* TKCategroiesTool.m */; };
+		93AE90B1191F495100B61411 /* UIButton+Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE90B0191F495100B61411 /* UIButton+Bootstrap.m */; };
+		93AE90B5191F5C5A00B61411 /* TKAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE90B4191F5C5A00B61411 /* TKAttributedLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +89,6 @@
 		93A65BEF191E2C4800B1BE2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93A65BF1191E2C4800B1BE2A /* TKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TKViewController.h; path = ../TKViewController.h; sourceTree = "<group>"; };
 		93A65BF2191E2C4800B1BE2A /* TKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TKViewController.m; path = ../TKViewController.m; sourceTree = "<group>"; };
-		93A65BF4191E2C4800B1BE2A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		93A65BFA191E2C4800B1BE2A /* TKDynamicRACTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TKDynamicRACTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A65BFB191E2C4800B1BE2A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		93A65C03191E2C4900B1BE2A /* TKDynamicRACTableViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKDynamicRACTableViewTests-Info.plist"; sourceTree = "<group>"; };
@@ -163,6 +165,13 @@
 		93AE9099191F380E00B61411 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		93AE909A191F380E00B61411 /* UIView+SuperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SuperView.h"; sourceTree = "<group>"; };
 		93AE909B191F380E00B61411 /* UIView+SuperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SuperView.m"; sourceTree = "<group>"; };
+		93AE90A6191F3DD900B61411 /* image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = image.xcassets; sourceTree = "<group>"; };
+		93AE90A8191F3FEC00B61411 /* TKCategroiesTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCategroiesTool.h; sourceTree = "<group>"; };
+		93AE90A9191F3FEC00B61411 /* TKCategroiesTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCategroiesTool.m; sourceTree = "<group>"; };
+		93AE90AF191F495100B61411 /* UIButton+Bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Bootstrap.h"; sourceTree = "<group>"; };
+		93AE90B0191F495100B61411 /* UIButton+Bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Bootstrap.m"; sourceTree = "<group>"; };
+		93AE90B3191F5C5A00B61411 /* TKAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAttributedLabel.h; sourceTree = "<group>"; };
+		93AE90B4191F5C5A00B61411 /* TKAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAttributedLabel.m; sourceTree = "<group>"; };
 		DDC07F4040324443985BB4F4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -238,7 +247,6 @@
 				93A65BEB191E2C4800B1BE2A /* TKAppDelegate.h */,
 				93A65BEC191E2C4800B1BE2A /* TKAppDelegate.m */,
 				93A65BEE191E2C4800B1BE2A /* Main.storyboard */,
-				93A65BF4191E2C4800B1BE2A /* Images.xcassets */,
 				93A65BE3191E2C4800B1BE2A /* Supporting Files */,
 			);
 			path = TKDynamicRACTableView;
@@ -251,6 +259,7 @@
 				93A65BE5191E2C4800B1BE2A /* InfoPlist.strings */,
 				93A65BE8191E2C4800B1BE2A /* main.m */,
 				93A65BEA191E2C4800B1BE2A /* TKDynamicRACTableView-Prefix.pch */,
+				93AE90A6191F3DD900B61411 /* image.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -289,6 +298,8 @@
 		93A65C13191E311400B1BE2A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				93AE90AF191F495100B61411 /* UIButton+Bootstrap.h */,
+				93AE90B0191F495100B61411 /* UIButton+Bootstrap.m */,
 				93AE908A191F380E00B61411 /* NSString+Emoji.h */,
 				93AE908B191F380E00B61411 /* NSString+Emoji.m */,
 				93AE908C191F380E00B61411 /* RIButtonItem.h */,
@@ -314,6 +325,7 @@
 		93A65C14191E311400B1BE2A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				93AE90B2191F5C4500B61411 /* ControllerKit */,
 				93A65C34191E3D3000B1BE2A /* PHOTO_CELL */,
 				93A65C33191E3D0400B1BE2A /* USEREVENT_CELL */,
 				93A65C32191E3CFC00B1BE2A /* LIKES_CELL */,
@@ -370,6 +382,8 @@
 			isa = PBXGroup;
 			children = (
 				93A65C25191E393700B1BE2A /* TKUtilsMacro.h */,
+				93AE90A8191F3FEC00B61411 /* TKCategroiesTool.h */,
+				93AE90A9191F3FEC00B61411 /* TKCategroiesTool.m */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -465,6 +479,15 @@
 			name = TableViewMacro;
 			sourceTree = "<group>";
 		};
+		93AE90B2191F5C4500B61411 /* ControllerKit */ = {
+			isa = PBXGroup;
+			children = (
+				93AE90B3191F5C5A00B61411 /* TKAttributedLabel.h */,
+				93AE90B4191F5C5A00B61411 /* TKAttributedLabel.m */,
+			);
+			name = ControllerKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -548,9 +571,9 @@
 				93A65C1E191E318000B1BE2A /* logo-58.png in Resources */,
 				93A65C1D191E318000B1BE2A /* logo-120.png in Resources */,
 				93A65C1F191E318000B1BE2A /* logo-80.png in Resources */,
-				93A65BF5191E2C4800B1BE2A /* Images.xcassets in Resources */,
 				93A65C2E191E3C9900B1BE2A /* TKFeedTitleInfoCell.xib in Resources */,
 				93A65BE7191E2C4800B1BE2A /* InfoPlist.strings in Resources */,
+				93AE90A7191F3DD900B61411 /* image.xcassets in Resources */,
 				93A65C22191E32F900B1BE2A /* Default.png in Resources */,
 				93A65BF0191E2C4800B1BE2A /* Main.storyboard in Resources */,
 			);
@@ -623,6 +646,7 @@
 				93AE9089191F1DB200B61411 /* TKAPIManager+Likes.m in Sources */,
 				93AE90A0191F380E00B61411 /* UICollectionView+FixRefreshControlJump.m in Sources */,
 				93A65C3A191E3F2300B1BE2A /* TKPost.m in Sources */,
+				93AE90AA191F3FEC00B61411 /* TKCategroiesTool.m in Sources */,
 				93AE909F191F380E00B61411 /* UIAlertView+Blocks.m in Sources */,
 				93AE909E191F380E00B61411 /* UIActionSheet+Blocks.m in Sources */,
 				93AE90A1191F380E00B61411 /* UIImage+STXImage.m in Sources */,
@@ -633,9 +657,11 @@
 				93AE907D191F1C0D00B61411 /* TKPhotoCell.m in Sources */,
 				93A65C40191E428F00B1BE2A /* TKLike.m in Sources */,
 				93A65C4A191E4B8100B1BE2A /* TKViewControllerModel.m in Sources */,
+				93AE90B1191F495100B61411 /* UIButton+Bootstrap.m in Sources */,
 				93AE9088191F1DB200B61411 /* TKAPIManager+Comment.m in Sources */,
 				93AE9065191F185400B61411 /* TKComentCell.m in Sources */,
 				93AE9077191F1BBC00B61411 /* TKUserEventCell.m in Sources */,
+				93AE90B5191F5C5A00B61411 /* TKAttributedLabel.m in Sources */,
 				93AE906E191F1A2900B61411 /* TKCaptionCellViewModel.m in Sources */,
 				93AE9080191F1C6B00B61411 /* TKPhotoCellViewModel.m in Sources */,
 			);

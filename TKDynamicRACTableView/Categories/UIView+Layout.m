@@ -201,4 +201,38 @@
     return CGPointMake(x, y);
 }
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (UIView*)descendantOrSelfWithClass:(Class)cls {
+    if ([self isKindOfClass:cls])
+        return self;
+    
+    for (UIView* child in self.subviews) {
+        UIView* it = [child descendantOrSelfWithClass:cls];
+        if (it)
+            return it;
+    }
+    
+    return nil;
+}
+
+- (id)subviewWithTag:(NSInteger)tag{
+    for(UIView *view in [self subviews]){
+        if(view.tag == tag){
+            return view;
+        }
+    }
+    return nil;
+}
+
+- (UIViewController*)viewController {
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    return nil;
+}
+
 @end

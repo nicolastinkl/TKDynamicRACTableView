@@ -7,8 +7,8 @@
 //
 
 #import "RVMViewModel.h"
-#import "TKComment.h"
 
+@class TKComment;
 @interface TKComentCellViewModel : RVMViewModel
 
 @property (nonatomic) TKComment * comments;

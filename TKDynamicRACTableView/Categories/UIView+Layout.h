@@ -111,4 +111,20 @@
  */
 @property (nonatomic, readonly) CGFloat orientationHeight;
 
+/*!
+ *  return view tag.
+ */
+- (id)subviewWithTag:(NSInteger)tag;
+
+/*!
+ *  return view's viewcontroller.
+ */
+- (UIViewController*)viewController;
+
+/*!
+ *  return view.
+ */
+- (UIView*)descendantOrSelfWithClass:(Class)cls;
+
+
 @end

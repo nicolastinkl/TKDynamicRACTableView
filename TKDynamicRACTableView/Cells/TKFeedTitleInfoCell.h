@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class TKFeedTitleInfoCellViewModel;
+@class TKFeedTitleInfoCellViewModel,RACCommand;
 
 @interface TKFeedTitleInfoCell : UITableViewCell
 
-- (void)configureWithViewModel:(TKFeedTitleInfoCellViewModel *)viewModel  reuseIdentifier:(NSString *)reuseIdentifier;;
+- (void)configureWithViewModel:(TKFeedTitleInfoCellViewModel *)viewModel;
 
-@property (nonatomic) UIButton *UserAvaterImageButton;
+@property(nonatomic,strong) RACCommand * avaterCommant;
+
 @property (nonatomic) TKFeedTitleInfoCellViewModel *viewModel;
 
 @end
