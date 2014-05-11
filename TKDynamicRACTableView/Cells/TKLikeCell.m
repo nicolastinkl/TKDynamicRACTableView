@@ -166,7 +166,8 @@ static CGFloat STXLikesViewTrailingEdgeInset = 10.f;
 - (TTTAttributedLabel *)likesLabelForCount:(NSInteger)count
 {
     TTTAttributedLabel *likesLabel = [TTTAttributedLabel newAutoLayoutView];
-    likesLabel.textColor = [UIColor blueColor];
+    likesLabel.textColor =  [UIColor colorWithRed:0.288 green:0.664 blue:1.000 alpha:1.000];
+    
     likesLabel.delegate = self;
     
     [self setLikesLabel:likesLabel count:count];
@@ -185,11 +186,14 @@ static CGFloat STXLikesViewTrailingEdgeInset = 10.f;
     likersLabel.lineBreakMode = NSLineBreakByWordWrapping;
     likersLabel.delegate = self;
     
-    likersLabel.linkAttributes = @{ (NSString *)kCTForegroundColorAttributeName: [UIColor blueColor],
-                                    (NSString *)kCTUnderlineStyleAttributeName : @(kCTUnderlineStyleNone) };
-    likersLabel.activeLinkAttributes = likersLabel.linkAttributes;
-    likersLabel.inactiveLinkAttributes = likersLabel.linkAttributes;
-    
+    likersLabel.linkAttributes = @{ (NSString *)kCTForegroundColorAttributeName: [UIColor colorWithRed:0.288 green:0.664 blue:1.000 alpha:1.000], (NSString *)kCTFontAttributeName: [UIFont boldSystemFontOfSize:16],
+                                     (NSString *)kCTUnderlineStyleAttributeName : @(kCTUnderlineStyleNone) };
+    NSMutableDictionary *mutableActiveLinkAttributes = [NSMutableDictionary dictionary];
+    [mutableActiveLinkAttributes setValue:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];
+    [mutableActiveLinkAttributes setValue:(__bridge id)[[UIColor colorWithRed:0.644 green:0.681 blue:0.702 alpha:1.000] CGColor] forKey:(NSString *)kCTForegroundColorAttributeName];
+    [mutableActiveLinkAttributes setValue:[NSNumber numberWithFloat:1.0f] forKey:(NSString *)kTTTBackgroundLineWidthAttributeName];
+    likersLabel.activeLinkAttributes = mutableActiveLinkAttributes;
+    likersLabel.highlightedTextColor = [UIColor lightGrayColor];
     [self setLikersLabel:likersLabel likers:likers];
     
     return likersLabel;
@@ -199,6 +203,7 @@ static CGFloat STXLikesViewTrailingEdgeInset = 10.f;
 
 - (void)showLikers:(id)sender
 {
+    UALog(@"showLikers");
     if ([self.delegate respondsToSelector:@selector(likesCellWillShowLikes:)])
         [self.delegate likesCellWillShowLikes:self];
 }

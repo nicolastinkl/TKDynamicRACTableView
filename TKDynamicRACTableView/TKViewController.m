@@ -53,7 +53,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    
+    self.title = @"英国短毛";
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [self.tableView addSubview:refreshControl];

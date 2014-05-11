@@ -20,9 +20,12 @@
 @class TKUserEventCell;
 @class TKFeedTitleInfoCell;
 
+@class TKPost;
 @interface TKTableViewDataSource : NSObject<UITableViewDataSource>
 
 @property (copy, nonatomic) NSArray *posts;
+
+-(TKPost *) postByIndexPath:(NSIndexPath *)indexPath;
 
 - (instancetype)initWithController:(id<TKLikesCellDelegate, TKCaptionCellDelegate, TKCommentCellDelegate>)controller tableView:(UITableView *)tableView;
 

@@ -11,11 +11,12 @@
 #import "TKPost.h"
 #import <UALogger.h>
 #import "TKCaptionCellViewModel.h"
-
+#import "UIView+Layout.h"
+#import "TKUtilsMacro.h"
 static CGFloat STXCaptionViewLeadingEdgeInset = 10.f;
 static CGFloat STXCaptionViewTrailingEdgeInset = 10.f;
 
-static NSString *HashTagAndMentionRegex = @"(#|@)(\\w+)";
+static NSString *HashTagAndMentionRegex = @"(#|@|##)(\\w+)";
 
 @interface TKCaptionCell () <TTTAttributedLabelDelegate>
 
@@ -51,7 +52,6 @@ static NSString *HashTagAndMentionRegex = @"(#|@)(\\w+)";
         
         NSString *text = _viewModel.posts.momentcontent;
         [self setCaptionLabel:self.captionLabel text:text];
-        
     }
 }
 
@@ -62,9 +62,17 @@ static NSString *HashTagAndMentionRegex = @"(#|@)(\\w+)";
     [self.contentView setNeedsLayout];
     [self.contentView layoutIfNeeded];
     
-    self.captionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.frame) - (STXCaptionViewLeadingEdgeInset + STXCaptionViewTrailingEdgeInset);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    CGSize sizeToFit = [self.viewModel.posts.momentcontent sizeWithFont:[UIFont systemFontOfSize:16.0f] constrainedToSize:CGSizeMake(300, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
+#pragma clang diagnostic pop
+    self.captionLabel.frame = RectSetOriginXYWH(STXCaptionViewLeadingEdgeInset, 5,sizeToFit.width, sizeToFit.height);
     
-    [super layoutSubviews];
+    [self.captionLabel sizeToFit];
+//    self.captionLabel.backgroundColor = [UIColor colorWithWhite:0.756 alpha:1.000];
+    
+//    self.captionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.frame) - (STXCaptionViewLeadingEdgeInset + STXCaptionViewTrailingEdgeInset);
+//    [super layoutSubviews];
 }
 
 #pragma mark - Attributed Label
@@ -98,6 +106,8 @@ static NSString *HashTagAndMentionRegex = @"(#|@)(\\w+)";
 - (TKAttributedLabel *)captionLabelWithText:(NSString *)text
 {
     TKAttributedLabel *captionLabel = [[TKAttributedLabel alloc] initForParagraphStyleWithText:text];
+    captionLabel.font = [UIFont systemFontOfSize:16.0f];
+    captionLabel.tag = 1;
     captionLabel.textColor = [UIColor blackColor];
     captionLabel.lineBreakMode = NSLineBreakByWordWrapping;
     captionLabel.numberOfLines = 0;

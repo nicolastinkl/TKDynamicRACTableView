@@ -183,9 +183,6 @@ static NSString *HashTagAndMentionRegex = @"(#|@)(\\w+)";
     commentLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
     commentLabel.linkAttributes = @{ (NSString *)kCTForegroundColorAttributeName: [UIColor colorWithRed:1.000 green:0.355 blue:0.229 alpha:1.000] };
-    //    commentLabel.activeLinkAttributes = commentLabel.linkAttributes;
-    //    commentLabel.inactiveLinkAttributes = commentLabel.linkAttributes;
-    
     NSMutableDictionary *mutableActiveLinkAttributes = [NSMutableDictionary dictionary];
     [mutableActiveLinkAttributes setValue:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];
     [mutableActiveLinkAttributes setValue:(__bridge id)[[UIColor colorWithRed:0.644 green:0.681 blue:0.702 alpha:1.000] CGColor] forKey:(NSString *)kCTForegroundColorAttributeName];
@@ -202,6 +199,7 @@ static NSString *HashTagAndMentionRegex = @"(#|@)(\\w+)";
 
 - (void)showAllComments:(id)sender
 {
+    UALogFull(@"");
     if ([self.delegate respondsToSelector:@selector(commentCellWillShowAllComments:)])
         [self.delegate commentCellWillShowAllComments:self];
 }

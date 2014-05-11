@@ -15,6 +15,8 @@
 #import <UIImageView+WebCache.h>
 #import "TKPost.h"
 #import <UALogger.h>
+
+
 @implementation TKPhotoCell
 
 //- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -31,13 +33,13 @@
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     if (self) {
         UIImageView * imageview = [[UIImageView alloc] init];
-        imageview.contentMode = UIViewContentModeScaleAspectFill;
-        imageview.backgroundColor = [UIColor randomHSBColor];
-//        imageview.frame = CGRectMake(0, 0, 320, 320);
+        imageview.contentMode = UIViewContentModeScaleAspectFit;
+//        imageview.backgroundColor = [UIColor randomHSBColor];
+        imageview.frame = CGRectMake(0, 0, 320, 320);
         imageview.tag = 1;
-//        imageview.clipsToBounds = YES;
+        imageview.clipsToBounds = YES;
         [self.contentView addSubview:imageview];
-        imageview.translatesAutoresizingMaskIntoConstraints = NO;
+//        imageview.translatesAutoresizingMaskIntoConstraints = NO;
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -57,7 +59,6 @@
 {
     if (_viewModel != viewModel) {
         _viewModel = viewModel;
-        return;
         UIImageView * imageview = [self.contentView subviewWithTag:1];
         @weakify(imageview)
         NSURL *imageURL = [NSURL URLWithString:[viewModel.posts imageURLWithmoment:@""]];
