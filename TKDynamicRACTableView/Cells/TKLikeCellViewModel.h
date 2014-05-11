@@ -8,6 +8,11 @@
 
 #import "RVMViewModel.h"
 
+@class TKLike;
 @interface TKLikeCellViewModel : RVMViewModel
+
+@property (nonatomic) TKLike * like;
+@property (nonatomic) NSIndexPath *indexPath;
+
 
 @end

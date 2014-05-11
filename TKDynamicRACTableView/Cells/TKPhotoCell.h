@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class TKPhotoCellViewModel;
 @interface TKPhotoCell : UITableViewCell
+
+- (void)configureWithViewModel:(TKPhotoCellViewModel *)viewModel reuseIdentifier:(NSString *)reuseIdentifier;
+
+@property (nonatomic) UIButton *postImageButton;
+@property (nonatomic) TKPhotoCellViewModel *viewModel;
 
 @end

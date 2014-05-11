@@ -33,11 +33,8 @@
 		93A65C3A191E3F2300B1BE2A /* TKPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C39191E3F2300B1BE2A /* TKPost.m */; };
 		93A65C3D191E427A00B1BE2A /* TKComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C3C191E427A00B1BE2A /* TKComment.m */; };
 		93A65C40191E428F00B1BE2A /* TKLike.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C3F191E428F00B1BE2A /* TKLike.m */; };
-		93A65C43191E43BB00B1BE2A /* TKAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C42191E43BB00B1BE2A /* TKAPIManager.m */; };
 		93A65C47191E4B1F00B1BE2A /* TKViewControllerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C46191E4B1F00B1BE2A /* TKViewControllerModule.m */; };
 		93A65C4A191E4B8100B1BE2A /* TKViewControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C49191E4B8100B1BE2A /* TKViewControllerModel.m */; };
-		93AE9055191EF86200B61411 /* TKAPIManager+Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9054191EF86200B61411 /* TKAPIManager+Comment.m */; };
-		93AE9058191EF93100B61411 /* TKAPIManager+Likes.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9057191EF93100B61411 /* TKAPIManager+Likes.m */; };
 		93AE905F191F15B000B61411 /* TKTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE905E191F15B000B61411 /* TKTableViewDelegate.m */; };
 		93AE9062191F15CD00B61411 /* TKTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9061191F15CD00B61411 /* TKTableViewDataSource.m */; };
 		93AE9065191F185400B61411 /* TKComentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9064191F185400B61411 /* TKComentCell.m */; };
@@ -50,6 +47,18 @@
 		93AE907A191F1BDE00B61411 /* TKUserEventCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9079191F1BDE00B61411 /* TKUserEventCellViewModel.m */; };
 		93AE907D191F1C0D00B61411 /* TKPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE907C191F1C0D00B61411 /* TKPhotoCell.m */; };
 		93AE9080191F1C6B00B61411 /* TKPhotoCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE907F191F1C6B00B61411 /* TKPhotoCellViewModel.m */; };
+		93AE9087191F1DB200B61411 /* TKAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9082191F1DB200B61411 /* TKAPIManager.m */; };
+		93AE9088191F1DB200B61411 /* TKAPIManager+Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9084191F1DB200B61411 /* TKAPIManager+Comment.m */; };
+		93AE9089191F1DB200B61411 /* TKAPIManager+Likes.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9086191F1DB200B61411 /* TKAPIManager+Likes.m */; };
+		93AE909C191F380E00B61411 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE908B191F380E00B61411 /* NSString+Emoji.m */; };
+		93AE909D191F380E00B61411 /* RIButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE908D191F380E00B61411 /* RIButtonItem.m */; };
+		93AE909E191F380E00B61411 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE908F191F380E00B61411 /* UIActionSheet+Blocks.m */; };
+		93AE909F191F380E00B61411 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9091191F380E00B61411 /* UIAlertView+Blocks.m */; };
+		93AE90A0191F380E00B61411 /* UICollectionView+FixRefreshControlJump.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9093191F380E00B61411 /* UICollectionView+FixRefreshControlJump.m */; };
+		93AE90A1191F380E00B61411 /* UIImage+STXImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9095191F380E00B61411 /* UIImage+STXImage.m */; };
+		93AE90A2191F380E00B61411 /* UIImageView+Masking.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9097191F380E00B61411 /* UIImageView+Masking.m */; };
+		93AE90A3191F380E00B61411 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9099191F380E00B61411 /* UIView+Layout.m */; };
+		93AE90A4191F380E00B61411 /* UIView+SuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE909B191F380E00B61411 /* UIView+SuperView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,18 +109,12 @@
 		93A65C3C191E427A00B1BE2A /* TKComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKComment.m; sourceTree = "<group>"; };
 		93A65C3E191E428F00B1BE2A /* TKLike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKLike.h; sourceTree = "<group>"; };
 		93A65C3F191E428F00B1BE2A /* TKLike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKLike.m; sourceTree = "<group>"; };
-		93A65C41191E43BB00B1BE2A /* TKAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAPIManager.h; sourceTree = "<group>"; };
-		93A65C42191E43BB00B1BE2A /* TKAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAPIManager.m; sourceTree = "<group>"; };
 		93A65C44191E4A7800B1BE2A /* TKProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKProtocol.h; sourceTree = "<group>"; };
 		93A65C45191E4B1F00B1BE2A /* TKViewControllerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKViewControllerModule.h; sourceTree = "<group>"; };
 		93A65C46191E4B1F00B1BE2A /* TKViewControllerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKViewControllerModule.m; sourceTree = "<group>"; };
 		93A65C48191E4B8100B1BE2A /* TKViewControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKViewControllerModel.h; sourceTree = "<group>"; };
 		93A65C49191E4B8100B1BE2A /* TKViewControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKViewControllerModel.m; sourceTree = "<group>"; };
 		93AE9051191EF74400B61411 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		93AE9053191EF86200B61411 /* TKAPIManager+Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TKAPIManager+Comment.h"; sourceTree = "<group>"; };
-		93AE9054191EF86200B61411 /* TKAPIManager+Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TKAPIManager+Comment.m"; sourceTree = "<group>"; };
-		93AE9056191EF93100B61411 /* TKAPIManager+Likes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TKAPIManager+Likes.h"; sourceTree = "<group>"; };
-		93AE9057191EF93100B61411 /* TKAPIManager+Likes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TKAPIManager+Likes.m"; sourceTree = "<group>"; };
 		93AE905D191F15B000B61411 /* TKTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableViewDelegate.h; sourceTree = "<group>"; };
 		93AE905E191F15B000B61411 /* TKTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTableViewDelegate.m; sourceTree = "<group>"; };
 		93AE9060191F15CD00B61411 /* TKTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableViewDataSource.h; sourceTree = "<group>"; };
@@ -136,6 +139,30 @@
 		93AE907C191F1C0D00B61411 /* TKPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPhotoCell.m; sourceTree = "<group>"; };
 		93AE907E191F1C6B00B61411 /* TKPhotoCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPhotoCellViewModel.h; sourceTree = "<group>"; };
 		93AE907F191F1C6B00B61411 /* TKPhotoCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPhotoCellViewModel.m; sourceTree = "<group>"; };
+		93AE9081191F1DB200B61411 /* TKAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAPIManager.h; sourceTree = "<group>"; };
+		93AE9082191F1DB200B61411 /* TKAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAPIManager.m; sourceTree = "<group>"; };
+		93AE9083191F1DB200B61411 /* TKAPIManager+Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TKAPIManager+Comment.h"; sourceTree = "<group>"; };
+		93AE9084191F1DB200B61411 /* TKAPIManager+Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TKAPIManager+Comment.m"; sourceTree = "<group>"; };
+		93AE9085191F1DB200B61411 /* TKAPIManager+Likes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TKAPIManager+Likes.h"; sourceTree = "<group>"; };
+		93AE9086191F1DB200B61411 /* TKAPIManager+Likes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TKAPIManager+Likes.m"; sourceTree = "<group>"; };
+		93AE908A191F380E00B61411 /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		93AE908B191F380E00B61411 /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
+		93AE908C191F380E00B61411 /* RIButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIButtonItem.h; sourceTree = "<group>"; };
+		93AE908D191F380E00B61411 /* RIButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIButtonItem.m; sourceTree = "<group>"; };
+		93AE908E191F380E00B61411 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
+		93AE908F191F380E00B61411 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
+		93AE9090191F380E00B61411 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		93AE9091191F380E00B61411 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		93AE9092191F380E00B61411 /* UICollectionView+FixRefreshControlJump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+FixRefreshControlJump.h"; sourceTree = "<group>"; };
+		93AE9093191F380E00B61411 /* UICollectionView+FixRefreshControlJump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+FixRefreshControlJump.m"; sourceTree = "<group>"; };
+		93AE9094191F380E00B61411 /* UIImage+STXImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+STXImage.h"; sourceTree = "<group>"; };
+		93AE9095191F380E00B61411 /* UIImage+STXImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+STXImage.m"; sourceTree = "<group>"; };
+		93AE9096191F380E00B61411 /* UIImageView+Masking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Masking.h"; sourceTree = "<group>"; };
+		93AE9097191F380E00B61411 /* UIImageView+Masking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Masking.m"; sourceTree = "<group>"; };
+		93AE9098191F380E00B61411 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		93AE9099191F380E00B61411 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		93AE909A191F380E00B61411 /* UIView+SuperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SuperView.h"; sourceTree = "<group>"; };
+		93AE909B191F380E00B61411 /* UIView+SuperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SuperView.m"; sourceTree = "<group>"; };
 		DDC07F4040324443985BB4F4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -206,7 +233,6 @@
 				93A65C13191E311400B1BE2A /* Categories */,
 				93A65C14191E311400B1BE2A /* Cells */,
 				93A65C15191E311400B1BE2A /* JsonItems */,
-				93A65C16191E311400B1BE2A /* Managers */,
 				93A65C17191E311400B1BE2A /* Modules */,
 				93A65C18191E311400B1BE2A /* Protocol */,
 				93A65BEB191E2C4800B1BE2A /* TKAppDelegate.h */,
@@ -250,6 +276,12 @@
 		93A65C12191E311400B1BE2A /* APIForNet */ = {
 			isa = PBXGroup;
 			children = (
+				93AE9081191F1DB200B61411 /* TKAPIManager.h */,
+				93AE9082191F1DB200B61411 /* TKAPIManager.m */,
+				93AE9083191F1DB200B61411 /* TKAPIManager+Comment.h */,
+				93AE9084191F1DB200B61411 /* TKAPIManager+Comment.m */,
+				93AE9085191F1DB200B61411 /* TKAPIManager+Likes.h */,
+				93AE9086191F1DB200B61411 /* TKAPIManager+Likes.m */,
 			);
 			path = APIForNet;
 			sourceTree = "<group>";
@@ -257,6 +289,24 @@
 		93A65C13191E311400B1BE2A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				93AE908A191F380E00B61411 /* NSString+Emoji.h */,
+				93AE908B191F380E00B61411 /* NSString+Emoji.m */,
+				93AE908C191F380E00B61411 /* RIButtonItem.h */,
+				93AE908D191F380E00B61411 /* RIButtonItem.m */,
+				93AE908E191F380E00B61411 /* UIActionSheet+Blocks.h */,
+				93AE908F191F380E00B61411 /* UIActionSheet+Blocks.m */,
+				93AE9090191F380E00B61411 /* UIAlertView+Blocks.h */,
+				93AE9091191F380E00B61411 /* UIAlertView+Blocks.m */,
+				93AE9092191F380E00B61411 /* UICollectionView+FixRefreshControlJump.h */,
+				93AE9093191F380E00B61411 /* UICollectionView+FixRefreshControlJump.m */,
+				93AE9094191F380E00B61411 /* UIImage+STXImage.h */,
+				93AE9095191F380E00B61411 /* UIImage+STXImage.m */,
+				93AE9096191F380E00B61411 /* UIImageView+Masking.h */,
+				93AE9097191F380E00B61411 /* UIImageView+Masking.m */,
+				93AE9098191F380E00B61411 /* UIView+Layout.h */,
+				93AE9099191F380E00B61411 /* UIView+Layout.m */,
+				93AE909A191F380E00B61411 /* UIView+SuperView.h */,
+				93AE909B191F380E00B61411 /* UIView+SuperView.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -285,19 +335,6 @@
 				93A65C3F191E428F00B1BE2A /* TKLike.m */,
 			);
 			path = JsonItems;
-			sourceTree = "<group>";
-		};
-		93A65C16191E311400B1BE2A /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				93A65C41191E43BB00B1BE2A /* TKAPIManager.h */,
-				93A65C42191E43BB00B1BE2A /* TKAPIManager.m */,
-				93AE9053191EF86200B61411 /* TKAPIManager+Comment.h */,
-				93AE9054191EF86200B61411 /* TKAPIManager+Comment.m */,
-				93AE9056191EF93100B61411 /* TKAPIManager+Likes.h */,
-				93AE9057191EF93100B61411 /* TKAPIManager+Likes.m */,
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		93A65C17191E311400B1BE2A /* Modules */ = {
@@ -568,27 +605,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A65BF3191E2C4800B1BE2A /* TKViewController.m in Sources */,
+				93AE90A2191F380E00B61411 /* UIImageView+Masking.m in Sources */,
 				93AE905F191F15B000B61411 /* TKTableViewDelegate.m in Sources */,
 				93A65C2D191E3C9900B1BE2A /* TKFeedTitleInfoCell.m in Sources */,
 				93AE9071191F1B6A00B61411 /* TKLikeCell.m in Sources */,
 				93A65BE9191E2C4800B1BE2A /* main.m in Sources */,
 				93AE9068191F193500B61411 /* TKComentCellViewModel.m in Sources */,
-				93AE9058191EF93100B61411 /* TKAPIManager+Likes.m in Sources */,
+				93AE90A4191F380E00B61411 /* UIView+SuperView.m in Sources */,
 				93A65C37191E3E1D00B1BE2A /* TKFeedTitleInfoCellViewModel.m in Sources */,
+				93AE90A3191F380E00B61411 /* UIView+Layout.m in Sources */,
 				93AE906B191F19F000B61411 /* TKCaptionCell.m in Sources */,
 				93A65C3D191E427A00B1BE2A /* TKComment.m in Sources */,
+				93AE9087191F1DB200B61411 /* TKAPIManager.m in Sources */,
+				93AE909C191F380E00B61411 /* NSString+Emoji.m in Sources */,
 				93AE9074191F1B8C00B61411 /* TKLikeCellViewModel.m in Sources */,
 				93AE9062191F15CD00B61411 /* TKTableViewDataSource.m in Sources */,
+				93AE9089191F1DB200B61411 /* TKAPIManager+Likes.m in Sources */,
+				93AE90A0191F380E00B61411 /* UICollectionView+FixRefreshControlJump.m in Sources */,
 				93A65C3A191E3F2300B1BE2A /* TKPost.m in Sources */,
+				93AE909F191F380E00B61411 /* UIAlertView+Blocks.m in Sources */,
+				93AE909E191F380E00B61411 /* UIActionSheet+Blocks.m in Sources */,
+				93AE90A1191F380E00B61411 /* UIImage+STXImage.m in Sources */,
 				93A65BED191E2C4800B1BE2A /* TKAppDelegate.m in Sources */,
 				93AE907A191F1BDE00B61411 /* TKUserEventCellViewModel.m in Sources */,
-				93AE9055191EF86200B61411 /* TKAPIManager+Comment.m in Sources */,
 				93A65C47191E4B1F00B1BE2A /* TKViewControllerModule.m in Sources */,
+				93AE909D191F380E00B61411 /* RIButtonItem.m in Sources */,
 				93AE907D191F1C0D00B61411 /* TKPhotoCell.m in Sources */,
 				93A65C40191E428F00B1BE2A /* TKLike.m in Sources */,
 				93A65C4A191E4B8100B1BE2A /* TKViewControllerModel.m in Sources */,
+				93AE9088191F1DB200B61411 /* TKAPIManager+Comment.m in Sources */,
 				93AE9065191F185400B61411 /* TKComentCell.m in Sources */,
-				93A65C43191E43BB00B1BE2A /* TKAPIManager.m in Sources */,
 				93AE9077191F1BBC00B61411 /* TKUserEventCell.m in Sources */,
 				93AE906E191F1A2900B61411 /* TKCaptionCellViewModel.m in Sources */,
 				93AE9080191F1C6B00B61411 /* TKPhotoCellViewModel.m in Sources */,

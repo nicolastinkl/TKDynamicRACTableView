@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class TKUserEventCellViewModel;
 @interface TKUserEventCell : UITableViewCell
+
+- (void)configureWithViewModel:(TKUserEventCellViewModel *)viewModel reuseIdentifier:(NSString *)reuseIdentifier;
+
+@property (nonatomic) UIButton *likeImageButton;
+@property (nonatomic) UIButton *commentImageButton;
+@property (nonatomic) UIButton *shareImageButton;
+
+@property (nonatomic) TKUserEventCellViewModel *viewModel;
+
+
 
 @end

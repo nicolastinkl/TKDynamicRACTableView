@@ -8,6 +8,10 @@
 
 #import "RVMViewModel.h"
 
+@class TKPost;
 @interface TKPhotoCellViewModel : RVMViewModel
+
+@property (nonatomic) TKPost * posts;
+@property (nonatomic) NSIndexPath *indexPath;
 
 @end

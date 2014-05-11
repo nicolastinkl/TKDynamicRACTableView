@@ -13,7 +13,6 @@
 
 @interface TKAPIManager : AFHTTPRequestOperationManager
 
-
 + (instancetype)sharedManager;
 
 - (RACSignal *)fetchPostsWithTimestamp:(NSString *)tag offset:(unsigned long long )offsetTimestamp limit:(NSInteger)limit;
