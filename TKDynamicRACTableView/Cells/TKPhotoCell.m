@@ -33,8 +33,9 @@
         UIImageView * imageview = [[UIImageView alloc] init];
         imageview.contentMode = UIViewContentModeScaleAspectFill;
         imageview.backgroundColor = [UIColor randomHSBColor];
-        imageview.frame = self.contentView.frame;
+//        imageview.frame = CGRectMake(0, 0, 320, 320);
         imageview.tag = 1;
+//        imageview.clipsToBounds = YES;
         [self.contentView addSubview:imageview];
         imageview.translatesAutoresizingMaskIntoConstraints = NO;
         
@@ -56,7 +57,7 @@
 {
     if (_viewModel != viewModel) {
         _viewModel = viewModel;
-        
+        return;
         UIImageView * imageview = [self.contentView subviewWithTag:1];
         @weakify(imageview)
         NSURL *imageURL = [NSURL URLWithString:[viewModel.posts imageURLWithmoment:@""]];
@@ -72,6 +73,7 @@
                 }];
             }
         }];
+
     }
 }
 

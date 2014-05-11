@@ -115,6 +115,7 @@
             NSArray * moments = posts[@"moments"];
             UALog(@"moments %lu",(unsigned long)moments.count);
             return  [[moments.rac_sequence map:^id(id value) {
+                
                 TKPost * post = [[TKPost alloc] initWithDictionary:value error:nil];
                 post.posttype = @"singleimage";
                 return post;

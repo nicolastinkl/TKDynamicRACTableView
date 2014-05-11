@@ -125,7 +125,6 @@ static NSString *HashTagAndMentionRegex = @"(#|@)(\\w+)";
 
 - (void)setCommentLabel:(TKAttributedLabel *)commentLabel text:(NSString *)text commenter:(NSString *)commenter
 {
-    UALog(@" %@",text);
     NSMutableArray *textCheckingResults = [NSMutableArray array];
     [commentLabel setText:text afterInheritingLabelAttributesAndConfiguringWithBlock:^NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString) {
         NSRange searchRange = NSMakeRange(0, [mutableAttributedString length]);

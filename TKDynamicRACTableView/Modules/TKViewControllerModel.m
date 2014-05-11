@@ -24,7 +24,7 @@
 
 - (RACSignal *)fetchMorePosts
 {
-    unsigned long long  seq = self.post.count ? ((TKPost *)[self.post lastObject]).timestamp : 0;
+    unsigned long long  seq = self.post.count ? ((TKPost *)[self.post lastObject]).timestamp : self.timestamp;
     return [[TKAPIManager sharedManager] fetchPostsWithTimestamp:tag offset:seq limit:limitCount];
 }
 @end

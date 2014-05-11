@@ -19,7 +19,7 @@
 #import "TKPost.h"
 #import "TKComment.h"
 #import "TKLike.h"
-
+#import <UALogger.h>
 #define TK_FEEDTITLE_CELL_ROW 0
 #define TK_PHOTO_CELL_ROW 1
 #define TK_CAPTION_CELL_ROW 2
@@ -63,6 +63,7 @@ static CGFloat const UserActionCellHeight = 44;
     if (indexPath.row == TK_FEEDTITLE_CELL_ROW) {
         return UserActionCellHeight;
     } else if (indexPath.row == TK_PHOTO_CELL_ROW) {
+        return UserActionCellHeight;
         return PhotoCellRowHeight;
     } else if (indexPath.row == TK_CAPTION_CELL_ROW) {
         cell = [dataSource captionCellForTableView:tableView atIndexPath:indexPath];
@@ -79,6 +80,7 @@ static CGFloat const UserActionCellHeight = 44;
     [cell updateConstraintsIfNeeded];
     
     height = [self heightForTableView:tableView cell:cell atIndexPath:indexPath];
+    
     return height;
 }
 

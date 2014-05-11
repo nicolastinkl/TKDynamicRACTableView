@@ -125,7 +125,7 @@ static CGFloat STXLikesViewTrailingEdgeInset = 10.f;
             if (likerIndex == 0)
                 [likersString setString:likerName.usernickname];
             else
-                [likersString appendFormat:NSLocalizedString(@" and %@", nil), likerName];
+                [likersString appendFormat:NSLocalizedString(@" and %@", nil), likerName.usernickname];
         }
         
         ++likerIndex;

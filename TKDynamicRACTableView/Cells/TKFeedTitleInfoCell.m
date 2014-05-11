@@ -68,12 +68,11 @@
      }];*/
     [self.avaterImageButton setRac_command:self.avaterCommant];
     
-    
-    [self.avaterImageButton setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:F(@"%@",[self.viewModel.posts imageURLWithmoment:@"avater"])] placeholderImage:[UIImage imageNamed:@"avater"]];
+//    [self.avaterImageButton setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:F(@"%@",[self.viewModel.posts imageURLWithmoment:@"avater"])] placeholderImage:[UIImage imageNamed:@"avater"]];
     self.profileNickLabel.text = F(@"%@",self.viewModel.posts.usernickname);
     
     self.dateLabel.textColor = [UIColor colorWithWhite:0.595 alpha:0.860];
-    self.dateLabel.text = [MHPrettyDate prettyDateFromDate:[NSDate dateWithTimeIntervalSince1970:self.viewModel.posts.timestamp] withFormat:MHPrettyDateLongRelativeTime];
+    self.dateLabel.text = [MHPrettyDate prettyDateFromDate:[NSDate dateWithTimeIntervalSince1970:self.viewModel.posts.timestamp] withFormat:MHPrettyDateShortRelativeTime];
     
 }
 

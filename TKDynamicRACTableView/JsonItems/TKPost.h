@@ -27,8 +27,8 @@
 @property (nonatomic, assign) NSInteger commentcount;
 @property (nonatomic, assign) unsigned long long timestamp;
 @property (strong, nonatomic) NSArray* tags;
-@property (strong, nonatomic) NSArray<TKLike>* likes;
-@property (strong, nonatomic) NSArray<TKComment>* comments;
+@property (strong, nonatomic) NSArray<TKLike,Optional>* likes;
+@property (strong, nonatomic) NSArray<TKComment,Optional>* comments;
 
 
 - (NSString *)imageURLWithmoment:(NSString *) momenttoken;

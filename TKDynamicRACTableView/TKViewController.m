@@ -78,25 +78,24 @@
             UALog(@"NO data");
         }
     }];
-    
+
     unsigned long long time  = [[NSDate date] timeIntervalSince1970]* 1000;
     self.viewModel.timestamp = time;
-    
     [[refreshControl rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(id x) {
         @strongify(self);
         [[self.viewModel fetchPostsWithTimestamp:time offset:10] subscribeNext:^(NSArray *pins) {
             UALogFull(@"fetch ok");
+            @strongify(self);
             self.viewModel.post = pins;
         }];
         
         [refreshControl endRefreshing];
     }];
     
-    
-    
     [self.tableView addInfiniteScrollingWithActionHandler:^{
         @strongify(self);
         [[self.viewModel fetchMorePosts] subscribeNext:^(NSArray * posts) {
+            UALog(@"fetch more");
             if (!posts.count) {
                 [SVProgressHUD showErrorWithStatus:@"没有更多了"];
             } else {
@@ -107,13 +106,11 @@
             [self.tableView.infiniteScrollingView stopAnimating];
         } ];
     }];
-    
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView triggerInfiniteScrolling];
     });
     
-    
+          
 }
 
 -(void)viewWillAppear:(BOOL)animated

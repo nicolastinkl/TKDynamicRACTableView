@@ -18,6 +18,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <UALogger.h>
 
 #import "TKFeedTitleInfoCellViewModel.h"
 #import "TKPhotoCellViewModel.h"
@@ -33,7 +34,7 @@
 #define TK_LIKES_CELL_ROW 3
 
 #define NUMBER_OF_STATIC_ROWS 4
-#define MAX_NUMBER_OF_COMMENTS 4
+#define MAX_NUMBER_OF_COMMENTS 3
 
 
 @interface TKTableViewDataSource ()
@@ -142,19 +143,17 @@
 {
     TKPost * post = self.posts[indexPath.section];
     TKComentCell *cell;
-
-    
-    if (indexPath.row == 0 && [post commentcount] > MAX_NUMBER_OF_COMMENTS) {
+    if (indexPath.row == 0 && [post comments].count >= MAX_NUMBER_OF_COMMENTS) {
         
         static NSString *AllCommentsCellIdentifier = @"TKAllCommentsCell";
         cell = [tableView dequeueReusableCellWithIdentifier:AllCommentsCellIdentifier];
         
         if (cell == nil) {
             cell = [[TKComentCell alloc] initWithStyle:STXCommentCellStyleShowAllComments
-                                           totalComments:[post commentcount]
+                                           totalComments:[post comments].count
                                          reuseIdentifier:AllCommentsCellIdentifier];
         } else {
-            cell.totalComments = [post commentcount];
+            cell.totalComments = [post comments].count;
         }
         
     } else {
@@ -177,7 +176,7 @@
             } else {
                 cell.viewModel = viewModel;
             }
-            cell.totalComments = [post commentcount];
+            cell.totalComments = [post comments].count;
         }
     }
     
@@ -212,8 +211,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     TKPost* postItem = self.posts[section];
-    NSInteger commentsCount = MIN(MAX_NUMBER_OF_COMMENTS, [postItem commentcount]);
-    return NUMBER_OF_STATIC_ROWS + commentsCount;
+    NSInteger commentsCounts = MIN(MAX_NUMBER_OF_COMMENTS, [postItem comments].count);
+    return NUMBER_OF_STATIC_ROWS + commentsCounts;
 }
 
 
