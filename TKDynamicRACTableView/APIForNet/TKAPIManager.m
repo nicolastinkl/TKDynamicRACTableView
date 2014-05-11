@@ -24,7 +24,6 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [self manager];
-//        instance.baseURL = url;
     });
     return instance;
 }
@@ -97,7 +96,7 @@
  */
 - (RACSignal *)fetchPostsWithPost:(NSMutableDictionary * ) params
 {
-    UALog(@"send json:  %@",[params JSONString]);
+    UALog(@"send json:  %@",params);
      /*     return [[self rac_GET:@"http://api.huaban.com/fm/wallpaper/tags" parameters:nil] map:^id(NSArray *tags) {
      return [[tags.rac_sequence map:^id(id value) {
      return value;

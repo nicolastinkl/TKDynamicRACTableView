@@ -80,10 +80,7 @@
     }];
     
     unsigned long long time  = [[NSDate date] timeIntervalSince1970]* 1000;
-    
-    NSLog(@"currentTimeMillis = %llu", time);
-    
-    
+    self.viewModel.timestamp = time;
     
     [[refreshControl rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(id x) {
         @strongify(self);
@@ -94,12 +91,6 @@
         
         [refreshControl endRefreshing];
     }];
-    
-    
-//    [[self.viewModel fetchPostsWithTimestamp:time offset:10] subscribeNext:^(NSArray *pins) {
-//        UALogFull(@"fetch ok");
-//        self.viewModel.post = pins;
-//    }];
     
     
     

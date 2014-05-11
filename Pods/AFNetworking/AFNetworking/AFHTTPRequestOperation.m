@@ -125,9 +125,9 @@ static dispatch_group_t http_request_operation_completion_group() {
                 }
             } else {
                 id responseObject = self.responseObject;
-                    NSLog(@"AF net error :%@",self.error.userInfo);
+//                    NSLog(@"AF net error :%@",self.error.userInfo);
                 if (self.error) {
-                    NSLog(@"AF net failure");
+//                    NSLog(@"AF net failure");
                     if (failure) {
                         dispatch_group_async(self.completionGroup ?: http_request_operation_completion_group(), self.completionQueue ?: dispatch_get_main_queue(), ^{
                             failure(self, self.error);
@@ -135,7 +135,7 @@ static dispatch_group_t http_request_operation_completion_group() {
                     }
                 } else {
                     if (success) {
-                        NSLog(@"AF net success");
+//                        NSLog(@"AF net success");
                         dispatch_group_async(self.completionGroup ?: http_request_operation_completion_group(), self.completionQueue ?: dispatch_get_main_queue(), ^{
                             success(self, responseObject);
                         });
