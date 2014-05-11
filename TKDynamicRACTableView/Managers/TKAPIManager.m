@@ -97,14 +97,13 @@
  */
 - (RACSignal *)fetchPostsWithPost:(NSMutableDictionary * ) params
 {
-    return [[self rac_GET:@"http://api.huaban.com/fm/wallpaper/tags" parameters:nil] map:^id(NSArray *tags) {
+     /*     return [[self rac_GET:@"http://api.huaban.com/fm/wallpaper/tags" parameters:nil] map:^id(NSArray *tags) {
      return [[tags.rac_sequence map:^id(id value) {
      return value;
      }] array];
      }]; // test ok
-     /* */
-        
-    return [[self rac_POST:@"http://api.petta.mobi/api.do" parameters:params] map:^id(id posts) {
+      */
+    return [[[[self rac_POST:@"http://api.petta.mobi/api.do" parameters:params] map:^id(id posts) {
         /*!
          *  reponse code 200
          */
@@ -114,17 +113,55 @@
         }
         if (posts && [posts[@"response"][@"response_code"] intValue] == 0) {
             NSArray * moments = posts[@"moments"];
+            UALog(@"moments %lu",(unsigned long)moments.count);
             return  [[moments.rac_sequence map:^id(id value) {
-                return [[TKPost alloc] initWithDictionary:value error:nil];
+                TKPost * post = [[TKPost alloc] initWithDictionary:value error:nil];
+                return post;
             }] array];
         }else{
             /*!
              *  error  maybe network error
              */
-            return [RACSignal empty];
+            return @[[RACSignal empty]];
         }
-    }
-    ] ;
+    }]  catch:^RACSignal *(NSError *error) {
+        return [RACSignal error:error];
+    }] replayLazily];
+}
+
+- (RACSignal *)fetchTokenWithParameters:(NSMutableDictionary *)parameters
+{
+    return [[[[[[self rac_POST:@"http://api.petta.mobi/api.do" parameters:parameters]
+                 // reduceEach的作用是传入多个参数，返回单个参数，是基于`map`的一种实现
+                 reduceEach:^id(AFHTTPRequestOperation *operation, NSDictionary *response){
+                     UALog(@"response :%@",response);
+                     // 拿到token后，就设置token property
+                     // setToken:方法会被触发，在那里会设置请求的头信息，如Authorization。
+//                     HBPAccessToken *token = [[HBPAccessToken alloc] initWithDictionary:response];
+//                     self.token = token;
+                     return self;
+                 }]
+                catch:^RACSignal *(NSError *error) {
+                    // 对Error进行处理，方便外部识别
+//                    NSInteger code = error.code == -1001 ? HBPAPIManagerErrorConnectionFailed : HBPAPIManagerErrorAuthenticatedFailed;
+//                    NSError *apiError = [[NSError alloc] initWithDomain:HBPAPIManagerErrorDomain code:code userInfo:nil];
+                    return [RACSignal error:error];
+                }]
+               then:^RACSignal *{
+                   // 一切正常的话，顺便获取用户信息
+                   UALogFull(@"then");
+                   return [self fetchPostsWithPost:parameters];
+               }]
+//              doNext:^(id *someobj) {
+//                  // doNext相当于一个钩子，是在sendNext时会被执行的一段代码
+////                  self.user = user;
+//                  UALogFull(someobj);
+//                  return self;
+//              }]
+             // 把发送内容换成self
+             mapReplace:self]
+            // 避免side effect
+            replayLazily];
 }
 
 

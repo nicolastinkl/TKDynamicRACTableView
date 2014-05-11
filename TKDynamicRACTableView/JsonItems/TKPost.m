@@ -11,17 +11,31 @@
 
 @implementation TKPost
 
+
+
+/*
+ + (JSONKeyMapper *)keyMapper
+ {
+    return [[JSONKeyMapper alloc] initWithDictionary:@{
+        //.......
+    }];
+ }
+
+ */
+
 /*!
- *  <#Description#>
+ *  url
  *
- *  @param  <# description#>
  *
     @return http://petta-moment.qiniudn.com/1399690172226_moment_3457.jpg-moment.petta
  */
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
 
 - (NSString *)imageURLWithmoment:(NSString *) momenttoken
 {
-    return F(@"%@-%@",self.momenturl, testToken);
-    return @"";
+    return F(@"%@-%@",self.momenturl, testIMAGEURLToken);
 }
 @end

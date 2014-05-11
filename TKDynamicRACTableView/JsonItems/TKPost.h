@@ -11,7 +11,7 @@
 #import "TKComment.h"
 
 #warning debug
-#define testToken @"moment.petta"
+#define testIMAGEURLToken @"moment.petta"
 
 @interface TKPost : JSONModel
 
@@ -19,9 +19,10 @@
 @property (nonatomic, strong) NSString *usernickname; //nick name
 
 @property (nonatomic, assign) NSInteger momentid;
+@property (nonatomic, assign) NSInteger islike;
 @property (nonatomic, strong) NSString *posttype; //diy type
 @property (nonatomic, strong) NSString *momenturl;
-@property (nonatomic, strong) NSString *momentcontent;
+@property (nonatomic, strong) NSString<Optional> *momentcontent;
 @property (nonatomic, assign) NSInteger likecount;
 @property (nonatomic, assign) NSInteger commentcount;
 @property (nonatomic, assign) unsigned long long timestamp;

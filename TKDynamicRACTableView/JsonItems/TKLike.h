@@ -18,9 +18,9 @@
 @protocol TKLike  
 
 @end
-@interface TKLike : JSONModel
+@interface TKLike : JSONModel 
 @property (nonatomic, assign) NSInteger userid;
 @property (nonatomic, strong) NSString *usernickname;
-@property (nonatomic, assign) NSInteger *likeid;
+@property (nonatomic, strong) NSString  *likeid; // MARK : NSInteger error crash
 
 @end

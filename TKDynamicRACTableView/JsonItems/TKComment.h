@@ -23,7 +23,7 @@
 
 @property (nonatomic, assign) NSInteger userid;
 @property (nonatomic, strong) NSString  *usernickname;
-@property (nonatomic, assign) NSInteger *commentid;
+@property (nonatomic, strong) NSString  *commentid;
 @property (nonatomic, strong) NSString  *commentcontent;
 
 @end

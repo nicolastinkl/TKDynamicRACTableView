@@ -42,9 +42,6 @@
     
     @weakify(self);
     [RACObserve(self, viewModel.post) subscribeNext:^(NSArray * posts) {
-        if (posts.count > 0) {
-                     
-        }
         @strongify(self);
         [self reload];
     }];
@@ -63,7 +60,7 @@
 }
 -(void) reload
 {
-     UALog(@"array count :  %lu",self.viewModel.post.count);
+     UALog(@"array count :  %lu",(unsigned long)self.viewModel.post.count);
 }
 
 - (void)configureWithTimestamp:(unsigned long long) timestamp

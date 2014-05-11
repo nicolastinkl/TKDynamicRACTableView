@@ -36,6 +36,8 @@
 		93A65C43191E43BB00B1BE2A /* TKAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C42191E43BB00B1BE2A /* TKAPIManager.m */; };
 		93A65C47191E4B1F00B1BE2A /* TKViewControllerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C46191E4B1F00B1BE2A /* TKViewControllerModule.m */; };
 		93A65C4A191E4B8100B1BE2A /* TKViewControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C49191E4B8100B1BE2A /* TKViewControllerModel.m */; };
+		93AE9055191EF86200B61411 /* TKAPIManager+Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9054191EF86200B61411 /* TKAPIManager+Comment.m */; };
+		93AE9058191EF93100B61411 /* TKAPIManager+Likes.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9057191EF93100B61411 /* TKAPIManager+Likes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,11 @@
 		93A65C46191E4B1F00B1BE2A /* TKViewControllerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKViewControllerModule.m; sourceTree = "<group>"; };
 		93A65C48191E4B8100B1BE2A /* TKViewControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKViewControllerModel.h; sourceTree = "<group>"; };
 		93A65C49191E4B8100B1BE2A /* TKViewControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKViewControllerModel.m; sourceTree = "<group>"; };
+		93AE9051191EF74400B61411 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		93AE9053191EF86200B61411 /* TKAPIManager+Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TKAPIManager+Comment.h"; sourceTree = "<group>"; };
+		93AE9054191EF86200B61411 /* TKAPIManager+Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TKAPIManager+Comment.m"; sourceTree = "<group>"; };
+		93AE9056191EF93100B61411 /* TKAPIManager+Likes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TKAPIManager+Likes.h"; sourceTree = "<group>"; };
+		93AE9057191EF93100B61411 /* TKAPIManager+Likes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TKAPIManager+Likes.m"; sourceTree = "<group>"; };
 		DDC07F4040324443985BB4F4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -144,6 +151,7 @@
 		93A65BDB191E2C4800B1BE2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				93AE9051191EF74400B61411 /* CFNetwork.framework */,
 				93A65BDC191E2C4800B1BE2A /* Foundation.framework */,
 				93A65BDE191E2C4800B1BE2A /* CoreGraphics.framework */,
 				93A65BE0191E2C4800B1BE2A /* UIKit.framework */,
@@ -248,6 +256,10 @@
 			children = (
 				93A65C41191E43BB00B1BE2A /* TKAPIManager.h */,
 				93A65C42191E43BB00B1BE2A /* TKAPIManager.m */,
+				93AE9053191EF86200B61411 /* TKAPIManager+Comment.h */,
+				93AE9054191EF86200B61411 /* TKAPIManager+Comment.m */,
+				93AE9056191EF93100B61411 /* TKAPIManager+Likes.h */,
+				93AE9057191EF93100B61411 /* TKAPIManager+Likes.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -490,10 +502,12 @@
 				93A65BF3191E2C4800B1BE2A /* TKViewController.m in Sources */,
 				93A65C2D191E3C9900B1BE2A /* TKFeedTitleInfoCell.m in Sources */,
 				93A65BE9191E2C4800B1BE2A /* main.m in Sources */,
+				93AE9058191EF93100B61411 /* TKAPIManager+Likes.m in Sources */,
 				93A65C37191E3E1D00B1BE2A /* TKFeedTitleInfoCellViewModel.m in Sources */,
 				93A65C3D191E427A00B1BE2A /* TKComment.m in Sources */,
 				93A65C3A191E3F2300B1BE2A /* TKPost.m in Sources */,
 				93A65BED191E2C4800B1BE2A /* TKAppDelegate.m in Sources */,
+				93AE9055191EF86200B61411 /* TKAPIManager+Comment.m in Sources */,
 				93A65C47191E4B1F00B1BE2A /* TKViewControllerModule.m in Sources */,
 				93A65C40191E428F00B1BE2A /* TKLike.m in Sources */,
 				93A65C4A191E4B8100B1BE2A /* TKViewControllerModel.m in Sources */,
