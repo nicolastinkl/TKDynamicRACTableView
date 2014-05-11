@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "TKProtocol.h"
 /*!
- *  <#Description#>
+ *  Main view
  */
-@interface TKViewController : UIViewController<TKViewControllerProtocol>
+@interface TKViewController : UITableViewController<TKViewControllerProtocol>
 
 @end

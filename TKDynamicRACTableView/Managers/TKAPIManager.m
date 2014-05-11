@@ -53,7 +53,7 @@
     paramsChild[@"count"] = @(limit);
     paramsChild[@"keyword"] = tag;
     paramsChild[@"isonlycount"] = @false;
-    paramsChild[@"timeline"] =@1399720005939;// @(offsetTimestamp);
+    paramsChild[@"timeline"] = @(offsetTimestamp);
     params[@"action"] = @"getkeywordmoments";
     params[@"value"] = [paramsChild JSONString];
     params[@"version"] = @"2";
@@ -116,6 +116,7 @@
             UALog(@"moments %lu",(unsigned long)moments.count);
             return  [[moments.rac_sequence map:^id(id value) {
                 TKPost * post = [[TKPost alloc] initWithDictionary:value error:nil];
+                post.posttype = @"singleimage";
                 return post;
             }] array];
         }else{

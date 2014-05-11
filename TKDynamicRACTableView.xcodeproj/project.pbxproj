@@ -38,6 +38,18 @@
 		93A65C4A191E4B8100B1BE2A /* TKViewControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A65C49191E4B8100B1BE2A /* TKViewControllerModel.m */; };
 		93AE9055191EF86200B61411 /* TKAPIManager+Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9054191EF86200B61411 /* TKAPIManager+Comment.m */; };
 		93AE9058191EF93100B61411 /* TKAPIManager+Likes.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9057191EF93100B61411 /* TKAPIManager+Likes.m */; };
+		93AE905F191F15B000B61411 /* TKTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE905E191F15B000B61411 /* TKTableViewDelegate.m */; };
+		93AE9062191F15CD00B61411 /* TKTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9061191F15CD00B61411 /* TKTableViewDataSource.m */; };
+		93AE9065191F185400B61411 /* TKComentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9064191F185400B61411 /* TKComentCell.m */; };
+		93AE9068191F193500B61411 /* TKComentCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9067191F193500B61411 /* TKComentCellViewModel.m */; };
+		93AE906B191F19F000B61411 /* TKCaptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE906A191F19F000B61411 /* TKCaptionCell.m */; };
+		93AE906E191F1A2900B61411 /* TKCaptionCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE906D191F1A2900B61411 /* TKCaptionCellViewModel.m */; };
+		93AE9071191F1B6A00B61411 /* TKLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9070191F1B6A00B61411 /* TKLikeCell.m */; };
+		93AE9074191F1B8C00B61411 /* TKLikeCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9073191F1B8C00B61411 /* TKLikeCellViewModel.m */; };
+		93AE9077191F1BBC00B61411 /* TKUserEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9076191F1BBC00B61411 /* TKUserEventCell.m */; };
+		93AE907A191F1BDE00B61411 /* TKUserEventCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE9079191F1BDE00B61411 /* TKUserEventCellViewModel.m */; };
+		93AE907D191F1C0D00B61411 /* TKPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE907C191F1C0D00B61411 /* TKPhotoCell.m */; };
+		93AE9080191F1C6B00B61411 /* TKPhotoCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE907F191F1C6B00B61411 /* TKPhotoCellViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +112,30 @@
 		93AE9054191EF86200B61411 /* TKAPIManager+Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TKAPIManager+Comment.m"; sourceTree = "<group>"; };
 		93AE9056191EF93100B61411 /* TKAPIManager+Likes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TKAPIManager+Likes.h"; sourceTree = "<group>"; };
 		93AE9057191EF93100B61411 /* TKAPIManager+Likes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TKAPIManager+Likes.m"; sourceTree = "<group>"; };
+		93AE905D191F15B000B61411 /* TKTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableViewDelegate.h; sourceTree = "<group>"; };
+		93AE905E191F15B000B61411 /* TKTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTableViewDelegate.m; sourceTree = "<group>"; };
+		93AE9060191F15CD00B61411 /* TKTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTableViewDataSource.h; sourceTree = "<group>"; };
+		93AE9061191F15CD00B61411 /* TKTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTableViewDataSource.m; sourceTree = "<group>"; };
+		93AE9063191F185400B61411 /* TKComentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKComentCell.h; sourceTree = "<group>"; };
+		93AE9064191F185400B61411 /* TKComentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKComentCell.m; sourceTree = "<group>"; };
+		93AE9066191F193500B61411 /* TKComentCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKComentCellViewModel.h; sourceTree = "<group>"; };
+		93AE9067191F193500B61411 /* TKComentCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKComentCellViewModel.m; sourceTree = "<group>"; };
+		93AE9069191F19F000B61411 /* TKCaptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCaptionCell.h; sourceTree = "<group>"; };
+		93AE906A191F19F000B61411 /* TKCaptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCaptionCell.m; sourceTree = "<group>"; };
+		93AE906C191F1A2900B61411 /* TKCaptionCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCaptionCellViewModel.h; sourceTree = "<group>"; };
+		93AE906D191F1A2900B61411 /* TKCaptionCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCaptionCellViewModel.m; sourceTree = "<group>"; };
+		93AE906F191F1B6A00B61411 /* TKLikeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKLikeCell.h; sourceTree = "<group>"; };
+		93AE9070191F1B6A00B61411 /* TKLikeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKLikeCell.m; sourceTree = "<group>"; };
+		93AE9072191F1B8C00B61411 /* TKLikeCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKLikeCellViewModel.h; sourceTree = "<group>"; };
+		93AE9073191F1B8C00B61411 /* TKLikeCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKLikeCellViewModel.m; sourceTree = "<group>"; };
+		93AE9075191F1BBC00B61411 /* TKUserEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserEventCell.h; sourceTree = "<group>"; };
+		93AE9076191F1BBC00B61411 /* TKUserEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserEventCell.m; sourceTree = "<group>"; };
+		93AE9078191F1BDE00B61411 /* TKUserEventCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUserEventCellViewModel.h; sourceTree = "<group>"; };
+		93AE9079191F1BDE00B61411 /* TKUserEventCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUserEventCellViewModel.m; sourceTree = "<group>"; };
+		93AE907B191F1C0D00B61411 /* TKPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPhotoCell.h; sourceTree = "<group>"; };
+		93AE907C191F1C0D00B61411 /* TKPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPhotoCell.m; sourceTree = "<group>"; };
+		93AE907E191F1C6B00B61411 /* TKPhotoCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPhotoCellViewModel.h; sourceTree = "<group>"; };
+		93AE907F191F1C6B00B61411 /* TKPhotoCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPhotoCellViewModel.m; sourceTree = "<group>"; };
 		DDC07F4040324443985BB4F4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -231,7 +267,7 @@
 				93A65C34191E3D3000B1BE2A /* PHOTO_CELL */,
 				93A65C33191E3D0400B1BE2A /* USEREVENT_CELL */,
 				93A65C32191E3CFC00B1BE2A /* LIKES_CELL */,
-				93A65C31191E3CF300B1BE2A /* CAPTEION_CELL */,
+				93A65C31191E3CF300B1BE2A /* CAPTION_CELL */,
 				93A65C30191E3CE400B1BE2A /* COMMENT_CELL */,
 				93A65C2F191E3CD200B1BE2A /* TITLE_CELL */,
 			);
@@ -267,6 +303,7 @@
 		93A65C17191E311400B1BE2A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				93AE905C191F155800B61411 /* TableViewMacro */,
 				93A65C29191E3BE000B1BE2A /* MainView */,
 			);
 			path = Modules;
@@ -328,20 +365,32 @@
 		93A65C30191E3CE400B1BE2A /* COMMENT_CELL */ = {
 			isa = PBXGroup;
 			children = (
+				93AE9063191F185400B61411 /* TKComentCell.h */,
+				93AE9064191F185400B61411 /* TKComentCell.m */,
+				93AE9066191F193500B61411 /* TKComentCellViewModel.h */,
+				93AE9067191F193500B61411 /* TKComentCellViewModel.m */,
 			);
 			name = COMMENT_CELL;
 			sourceTree = "<group>";
 		};
-		93A65C31191E3CF300B1BE2A /* CAPTEION_CELL */ = {
+		93A65C31191E3CF300B1BE2A /* CAPTION_CELL */ = {
 			isa = PBXGroup;
 			children = (
+				93AE9069191F19F000B61411 /* TKCaptionCell.h */,
+				93AE906A191F19F000B61411 /* TKCaptionCell.m */,
+				93AE906C191F1A2900B61411 /* TKCaptionCellViewModel.h */,
+				93AE906D191F1A2900B61411 /* TKCaptionCellViewModel.m */,
 			);
-			name = CAPTEION_CELL;
+			name = CAPTION_CELL;
 			sourceTree = "<group>";
 		};
 		93A65C32191E3CFC00B1BE2A /* LIKES_CELL */ = {
 			isa = PBXGroup;
 			children = (
+				93AE906F191F1B6A00B61411 /* TKLikeCell.h */,
+				93AE9070191F1B6A00B61411 /* TKLikeCell.m */,
+				93AE9072191F1B8C00B61411 /* TKLikeCellViewModel.h */,
+				93AE9073191F1B8C00B61411 /* TKLikeCellViewModel.m */,
 			);
 			name = LIKES_CELL;
 			sourceTree = "<group>";
@@ -349,6 +398,10 @@
 		93A65C33191E3D0400B1BE2A /* USEREVENT_CELL */ = {
 			isa = PBXGroup;
 			children = (
+				93AE9075191F1BBC00B61411 /* TKUserEventCell.h */,
+				93AE9076191F1BBC00B61411 /* TKUserEventCell.m */,
+				93AE9078191F1BDE00B61411 /* TKUserEventCellViewModel.h */,
+				93AE9079191F1BDE00B61411 /* TKUserEventCellViewModel.m */,
 			);
 			name = USEREVENT_CELL;
 			sourceTree = "<group>";
@@ -356,8 +409,23 @@
 		93A65C34191E3D3000B1BE2A /* PHOTO_CELL */ = {
 			isa = PBXGroup;
 			children = (
+				93AE907B191F1C0D00B61411 /* TKPhotoCell.h */,
+				93AE907C191F1C0D00B61411 /* TKPhotoCell.m */,
+				93AE907E191F1C6B00B61411 /* TKPhotoCellViewModel.h */,
+				93AE907F191F1C6B00B61411 /* TKPhotoCellViewModel.m */,
 			);
 			name = PHOTO_CELL;
+			sourceTree = "<group>";
+		};
+		93AE905C191F155800B61411 /* TableViewMacro */ = {
+			isa = PBXGroup;
+			children = (
+				93AE905D191F15B000B61411 /* TKTableViewDelegate.h */,
+				93AE905E191F15B000B61411 /* TKTableViewDelegate.m */,
+				93AE9060191F15CD00B61411 /* TKTableViewDataSource.h */,
+				93AE9061191F15CD00B61411 /* TKTableViewDataSource.m */,
+			);
+			name = TableViewMacro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,18 +568,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A65BF3191E2C4800B1BE2A /* TKViewController.m in Sources */,
+				93AE905F191F15B000B61411 /* TKTableViewDelegate.m in Sources */,
 				93A65C2D191E3C9900B1BE2A /* TKFeedTitleInfoCell.m in Sources */,
+				93AE9071191F1B6A00B61411 /* TKLikeCell.m in Sources */,
 				93A65BE9191E2C4800B1BE2A /* main.m in Sources */,
+				93AE9068191F193500B61411 /* TKComentCellViewModel.m in Sources */,
 				93AE9058191EF93100B61411 /* TKAPIManager+Likes.m in Sources */,
 				93A65C37191E3E1D00B1BE2A /* TKFeedTitleInfoCellViewModel.m in Sources */,
+				93AE906B191F19F000B61411 /* TKCaptionCell.m in Sources */,
 				93A65C3D191E427A00B1BE2A /* TKComment.m in Sources */,
+				93AE9074191F1B8C00B61411 /* TKLikeCellViewModel.m in Sources */,
+				93AE9062191F15CD00B61411 /* TKTableViewDataSource.m in Sources */,
 				93A65C3A191E3F2300B1BE2A /* TKPost.m in Sources */,
 				93A65BED191E2C4800B1BE2A /* TKAppDelegate.m in Sources */,
+				93AE907A191F1BDE00B61411 /* TKUserEventCellViewModel.m in Sources */,
 				93AE9055191EF86200B61411 /* TKAPIManager+Comment.m in Sources */,
 				93A65C47191E4B1F00B1BE2A /* TKViewControllerModule.m in Sources */,
+				93AE907D191F1C0D00B61411 /* TKPhotoCell.m in Sources */,
 				93A65C40191E428F00B1BE2A /* TKLike.m in Sources */,
 				93A65C4A191E4B8100B1BE2A /* TKViewControllerModel.m in Sources */,
+				93AE9065191F185400B61411 /* TKComentCell.m in Sources */,
 				93A65C43191E43BB00B1BE2A /* TKAPIManager.m in Sources */,
+				93AE9077191F1BBC00B61411 /* TKUserEventCell.m in Sources */,
+				93AE906E191F1A2900B61411 /* TKCaptionCellViewModel.m in Sources */,
+				93AE9080191F1C6B00B61411 /* TKPhotoCellViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

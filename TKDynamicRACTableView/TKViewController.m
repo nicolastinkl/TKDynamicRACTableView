@@ -26,10 +26,11 @@
 
 @implementation TKViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithStyle:style];
     if (self) {
+        // Custom initialization
         self.viewModel = [[TKViewControllerModel alloc] init];
     }
     return self;
@@ -46,7 +47,10 @@
         [self reload];
     }];
     
-    unsigned long long time  = [[NSDate date] timeIntervalSince1970];
+    unsigned long long time  = [[NSDate date] timeIntervalSince1970]* 1000;
+    
+    NSLog(@"currentTimeMillis = %llu", time);
+    
     [[self.viewModel fetchPostsWithTimestamp:time offset:10] subscribeNext:^(NSArray *pins) {
         UALogFull(@"fetch ok");
         self.viewModel.post = pins;
@@ -58,6 +62,7 @@
     [super viewWillAppear:animated];
     self.viewModel.active = YES;
 }
+
 -(void) reload
 {
      UALog(@"array count :  %lu",(unsigned long)self.viewModel.post.count);
@@ -70,7 +75,7 @@
 
 - (void)configureWithLatest
 {
-        self.viewModel.timestamp = 0;
+    self.viewModel.timestamp = 1399720005939;
 }
 
 - (void)didReceiveMemoryWarning

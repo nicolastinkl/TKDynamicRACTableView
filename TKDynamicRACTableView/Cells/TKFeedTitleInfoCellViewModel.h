@@ -11,7 +11,7 @@
 @class TKPost;
 @interface TKFeedTitleInfoCellViewModel : RVMViewModel
 
-@property (nonatomic) TKPost *pin;
+@property (nonatomic) TKPost * posts;
 @property (nonatomic) NSIndexPath *indexPath;
 
 @end
