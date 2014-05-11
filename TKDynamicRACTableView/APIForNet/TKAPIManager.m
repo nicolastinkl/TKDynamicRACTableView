@@ -97,6 +97,7 @@
  */
 - (RACSignal *)fetchPostsWithPost:(NSMutableDictionary * ) params
 {
+    UALog(@"send json:  %@",[params JSONString]);
      /*     return [[self rac_GET:@"http://api.huaban.com/fm/wallpaper/tags" parameters:nil] map:^id(NSArray *tags) {
      return [[tags.rac_sequence map:^id(id value) {
      return value;
@@ -123,7 +124,7 @@
             /*!
              *  error  maybe network error
              */
-            return @[[RACSignal empty]];
+            return @[];
         }
     }]  catch:^RACSignal *(NSError *error) {
         return [RACSignal error:error];
@@ -136,32 +137,25 @@
                  // reduceEach的作用是传入多个参数，返回单个参数，是基于`map`的一种实现
                  reduceEach:^id(AFHTTPRequestOperation *operation, NSDictionary *response){
                      UALog(@"response :%@",response);
-                     // 拿到token后，就设置token property
-                     // setToken:方法会被触发，在那里会设置请求的头信息，如Authorization。
-//                     HBPAccessToken *token = [[HBPAccessToken alloc] initWithDictionary:response];
-//                     self.token = token;
+                     // get token and setings token property
                      return self;
                  }]
                 catch:^RACSignal *(NSError *error) {
-                    // 对Error进行处理，方便外部识别
-//                    NSInteger code = error.code == -1001 ? HBPAPIManagerErrorConnectionFailed : HBPAPIManagerErrorAuthenticatedFailed;
-//                    NSError *apiError = [[NSError alloc] initWithDomain:HBPAPIManagerErrorDomain code:code userInfo:nil];
+//                    NSInteger code = error.code == -1001
                     return [RACSignal error:error];
                 }]
                then:^RACSignal *{
-                   // 一切正常的话，顺便获取用户信息
                    UALogFull(@"then");
                    return [self fetchPostsWithPost:parameters];
                }]
 //              doNext:^(id *someobj) {
-//                  // doNext相当于一个钩子，是在sendNext时会被执行的一段代码
+//                  // doNext -> sendNext running...
 ////                  self.user = user;
 //                  UALogFull(someobj);
 //                  return self;
 //              }]
-             // 把发送内容换成self
              mapReplace:self]
-            // 避免side effect
+            // side effect
             replayLazily];
 }
 

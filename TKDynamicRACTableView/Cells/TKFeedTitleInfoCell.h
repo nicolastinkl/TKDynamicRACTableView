@@ -14,6 +14,8 @@
 
 - (void)configureWithViewModel:(TKFeedTitleInfoCellViewModel *)viewModel;
 
+@property (strong, nonatomic) NSIndexPath *indexPath;
+
 @property(nonatomic,strong) RACCommand * avaterCommant;
 
 @property (nonatomic) TKFeedTitleInfoCellViewModel *viewModel;

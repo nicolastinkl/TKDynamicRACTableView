@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+
+@protocol TKLikesCellDelegate;
+@protocol TKCaptionCellDelegate;
+@protocol TKCommentCellDelegate;
+
 @interface TKTableViewDelegate : NSObject<UITableViewDelegate>
+
+@property (nonatomic) BOOL insertingRow;
+
+- (instancetype)initWithController:(id<TKLikesCellDelegate, TKCaptionCellDelegate, TKCommentCellDelegate>)controller;
+
+- (void)reloadAtIndexPath:(NSIndexPath *)indexPath forTableView:(UITableView *)tableView;
+
 
 @end

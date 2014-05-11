@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, STXLikesCellStyle) {
 };
 
 @class TKLikeCell;
-@protocol STXLikesCellDelegate <NSObject>
+@protocol TKLikesCellDelegate <NSObject>
 
 @optional
 
@@ -29,7 +29,7 @@ typedef NS_ENUM(NSUInteger, STXLikesCellStyle) {
 @interface TKLikeCell : UITableViewCell
 
 @property (nonatomic) TKLikeCellViewModel *viewModel;
-@property (weak, nonatomic) id <STXLikesCellDelegate> delegate;
+@property (weak, nonatomic) id <TKLikesCellDelegate> delegate;
 
 - (instancetype)initWithStyle:(STXLikesCellStyle)style likes:(TKLikeCellViewModel *)viewModel reuseIdentifier:(NSString *)reuseIdentifier;
 
