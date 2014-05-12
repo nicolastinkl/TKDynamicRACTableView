@@ -10,7 +10,7 @@
 #import "TKLike.h"
 #import "TKComment.h"
 
-#warning debug
+//#warning debug
 #define testIMAGEURLToken @"moment.petta"
  
 @interface TKPost : JSONModel

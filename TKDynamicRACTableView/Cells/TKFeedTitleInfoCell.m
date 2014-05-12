@@ -61,7 +61,6 @@
      }];
      }];
      
-     
      [_oKComment.executing subscribeNext:^(RACSignal *loginSignal) {
      // Log a message whenever we log in successfully.
      //        loginSignal subscribe:(id<RACSubscriber>)

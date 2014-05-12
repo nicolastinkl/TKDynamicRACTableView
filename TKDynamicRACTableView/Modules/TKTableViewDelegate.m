@@ -31,7 +31,7 @@
 #define NUMBER_OF_STATIC_ROWS 5
 #define MAX_NUMBER_OF_COMMENTS 3
 
-static CGFloat const PhotoCellRowHeight = 320;
+static CGFloat const PhotoCellRowHeight = 305;
 static CGFloat const UserActionCellHeight = 44;
 static CGFloat const ContenCellHeight = 30;
 

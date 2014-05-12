@@ -9,6 +9,7 @@
 #import "TKAppDelegate.h"
 
 #import "TKProtocol.h"
+#import "TKNaviViewController.h"
 #import <Objection.h>
 
 @implementation TKAppDelegate
@@ -28,10 +29,9 @@
 {
     UIViewController <TKViewControllerProtocol> *waterfallViewController = [[JSObjection defaultInjector] getObject:@protocol(TKViewControllerProtocol)];
     [waterfallViewController configureWithLatest];
+      TKNaviViewController * navi = [[TKNaviViewController alloc] initWithRootViewController:waterfallViewController];
     
-    UINavigationController *tabViewController = [[UINavigationController alloc] initWithRootViewController:waterfallViewController];
-    
-    self.window.rootViewController = tabViewController;
+    self.window.rootViewController = navi;
 }
 
 

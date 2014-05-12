@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 @class RACSignal;
 
-
 @protocol TKProtocol <NSObject>
 @end
 
@@ -20,6 +19,16 @@
 - (void)configureWithTimestamp:(unsigned long long) timestamp;
 - (void)configureWithLatest;
 @end
+
+
+/*!
+ *  module
+ */
+@class TKViewControllerModel;
+@protocol TKDetailsViewControllerProtocol <NSObject>
+- (void)configureWithModel:(TKViewControllerModel *) viewModel;
+@end
+
 
 
 /*!

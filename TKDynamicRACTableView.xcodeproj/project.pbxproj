@@ -62,6 +62,9 @@
 		93AE90AA191F3FEC00B61411 /* TKCategroiesTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE90A9191F3FEC00B61411 /* TKCategroiesTool.m */; };
 		93AE90B1191F495100B61411 /* UIButton+Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE90B0191F495100B61411 /* UIButton+Bootstrap.m */; };
 		93AE90B5191F5C5A00B61411 /* TKAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE90B4191F5C5A00B61411 /* TKAttributedLabel.m */; };
+		93AE90BB19208B7700B61411 /* TKNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE90BA19208B7700B61411 /* TKNaviViewController.m */; };
+		93AE90BF19208BD500B61411 /* TKDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE90BE19208BD500B61411 /* TKDetailsViewController.m */; };
+		93AE90C219208CB700B61411 /* TKDetailsViewControllerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE90C119208CB700B61411 /* TKDetailsViewControllerModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +175,12 @@
 		93AE90B0191F495100B61411 /* UIButton+Bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Bootstrap.m"; sourceTree = "<group>"; };
 		93AE90B3191F5C5A00B61411 /* TKAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAttributedLabel.h; sourceTree = "<group>"; };
 		93AE90B4191F5C5A00B61411 /* TKAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAttributedLabel.m; sourceTree = "<group>"; };
+		93AE90B919208B7700B61411 /* TKNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNaviViewController.h; sourceTree = "<group>"; };
+		93AE90BA19208B7700B61411 /* TKNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNaviViewController.m; sourceTree = "<group>"; };
+		93AE90BD19208BD500B61411 /* TKDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDetailsViewController.h; sourceTree = "<group>"; };
+		93AE90BE19208BD500B61411 /* TKDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDetailsViewController.m; sourceTree = "<group>"; };
+		93AE90C019208CB700B61411 /* TKDetailsViewControllerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDetailsViewControllerModule.h; sourceTree = "<group>"; };
+		93AE90C119208CB700B61411 /* TKDetailsViewControllerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDetailsViewControllerModule.m; sourceTree = "<group>"; };
 		DDC07F4040324443985BB4F4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -352,6 +361,7 @@
 		93A65C17191E311400B1BE2A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				93AE90BC19208BBA00B61411 /* Details */,
 				93AE905C191F155800B61411 /* TableViewMacro */,
 				93A65C29191E3BE000B1BE2A /* MainView */,
 			);
@@ -381,6 +391,8 @@
 		93A65C24191E38E500B1BE2A /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				93AE90B919208B7700B61411 /* TKNaviViewController.h */,
+				93AE90BA19208B7700B61411 /* TKNaviViewController.m */,
 				93A65C25191E393700B1BE2A /* TKUtilsMacro.h */,
 				93AE90A8191F3FEC00B61411 /* TKCategroiesTool.h */,
 				93AE90A9191F3FEC00B61411 /* TKCategroiesTool.m */,
@@ -486,6 +498,17 @@
 				93AE90B4191F5C5A00B61411 /* TKAttributedLabel.m */,
 			);
 			name = ControllerKit;
+			sourceTree = "<group>";
+		};
+		93AE90BC19208BBA00B61411 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				93AE90BD19208BD500B61411 /* TKDetailsViewController.h */,
+				93AE90BE19208BD500B61411 /* TKDetailsViewController.m */,
+				93AE90C019208CB700B61411 /* TKDetailsViewControllerModule.h */,
+				93AE90C119208CB700B61411 /* TKDetailsViewControllerModule.m */,
+			);
+			name = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -650,8 +673,10 @@
 				93AE909F191F380E00B61411 /* UIAlertView+Blocks.m in Sources */,
 				93AE909E191F380E00B61411 /* UIActionSheet+Blocks.m in Sources */,
 				93AE90A1191F380E00B61411 /* UIImage+STXImage.m in Sources */,
+				93AE90BB19208B7700B61411 /* TKNaviViewController.m in Sources */,
 				93A65BED191E2C4800B1BE2A /* TKAppDelegate.m in Sources */,
 				93AE907A191F1BDE00B61411 /* TKUserEventCellViewModel.m in Sources */,
+				93AE90BF19208BD500B61411 /* TKDetailsViewController.m in Sources */,
 				93A65C47191E4B1F00B1BE2A /* TKViewControllerModule.m in Sources */,
 				93AE909D191F380E00B61411 /* RIButtonItem.m in Sources */,
 				93AE907D191F1C0D00B61411 /* TKPhotoCell.m in Sources */,
@@ -661,6 +686,7 @@
 				93AE9088191F1DB200B61411 /* TKAPIManager+Comment.m in Sources */,
 				93AE9065191F185400B61411 /* TKComentCell.m in Sources */,
 				93AE9077191F1BBC00B61411 /* TKUserEventCell.m in Sources */,
+				93AE90C219208CB700B61411 /* TKDetailsViewControllerModule.m in Sources */,
 				93AE90B5191F5C5A00B61411 /* TKAttributedLabel.m in Sources */,
 				93AE906E191F1A2900B61411 /* TKCaptionCellViewModel.m in Sources */,
 				93AE9080191F1C6B00B61411 /* TKPhotoCellViewModel.m in Sources */,
