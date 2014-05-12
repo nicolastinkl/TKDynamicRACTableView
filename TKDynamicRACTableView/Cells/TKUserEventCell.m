@@ -20,11 +20,11 @@
         // Initialization code
         
         UIButton * likebutton = [UIButton buttonWithType:UIButtonTypeCustom];        
-        likebutton.frame = RectSetOriginWH(20 ,60.0f, 44.0f);
+        likebutton.frame = RectSetOriginWH(20 ,60.0f, 24.0f);
         UIButton * commentbutton = [UIButton buttonWithType:UIButtonTypeCustom];
-        commentbutton.frame = RectSetOriginWH(20+likebutton.left,60.0f, 44.0f);
+        commentbutton.frame = RectSetOriginWH(80+likebutton.left,60.0f, 24.0f);
         UIButton * sharebutton = [UIButton buttonWithType:UIButtonTypeCustom];
-        sharebutton.frame = RectSetOriginWH(20 +commentbutton.left,60.0f, 44.0f);
+        sharebutton.frame = RectSetOriginWH(80 +commentbutton.left,60.0f, 24.0f);
         [likebutton sendMessageStyle];
         [commentbutton sendMessageStyle];
         [sharebutton sendMessageStyle];
@@ -38,7 +38,7 @@
         _shareImageButton = sharebutton;
         
         [_likeImageButton setTitle:@"like" forState:UIControlStateNormal];
-        [_commentImageButton setTitle:@"Comment" forState:UIControlStateNormal];
+        [_commentImageButton setTitle:@"Com" forState:UIControlStateNormal];
         [_shareImageButton setTitle:@"share" forState:UIControlStateNormal];
         
         self.viewModel = viewModel;

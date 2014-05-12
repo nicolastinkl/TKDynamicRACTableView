@@ -33,8 +33,8 @@
 #define TK_CAPTION_CELL_ROW 2
 #define TK_LIKES_CELL_ROW 3
 
-#define NUMBER_OF_STATIC_ROWS 4
-#define MAX_NUMBER_OF_COMMENTS 4
+#define NUMBER_OF_STATIC_ROWS 5
+#define MAX_NUMBER_OF_COMMENTS 3
 
 
 @interface TKTableViewDataSource ()
@@ -143,8 +143,38 @@
 {
     TKPost * post = self.posts[indexPath.section];
     TKComentCell *cell;
-    if (indexPath.row == 0 && [post commentcount] >= MAX_NUMBER_OF_COMMENTS) {
-        
+    
+    static NSString *CellIdentifier = @"TKSingleCommentCell";
+    cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    NSArray *comments = [post comments];
+    TKComment * comment;
+    if([comments count]>indexPath.row)
+        comment = comments[indexPath.row];
+    else
+    {
+        comment = [[TKComment alloc] init];
+        comment.commentcontent = @"";
+        comment.usernickname = @"";
+    }
+    
+    TKComentCellViewModel * viewModel = [[TKComentCellViewModel alloc] init];
+    viewModel.indexPath = indexPath;
+    viewModel.comments = comment;
+    
+    if (indexPath.row < [comments count]) {
+        if (cell == nil) {
+            cell = [[TKComentCell alloc] initWithStyle:STXCommentCellStyleSingleComment
+                                               comment:viewModel
+                                       reuseIdentifier:CellIdentifier];
+        } else {
+            cell.viewModel = viewModel;
+        }
+//        cell.totalComments = [post commentcount];
+    }
+    
+    /*if (indexPath.row == 0 && [post commentcount] >= MAX_NUMBER_OF_COMMENTS) {
+     
         static NSString *AllCommentsCellIdentifier = @"TKAllCommentsCell";
         cell = [tableView dequeueReusableCellWithIdentifier:AllCommentsCellIdentifier];
         
@@ -186,7 +216,7 @@
             cell.totalComments = [post commentcount];
         }
     }
-    
+    */
     cell.delegate = self.controller;
     
     return cell;
@@ -219,16 +249,19 @@
 {
     TKPost* postItem = self.posts[section];
     NSInteger commentsCounts = MIN(MAX_NUMBER_OF_COMMENTS, [postItem commentcount]);
-    UALog(@"rows %ld  coms  %ld",commentsCounts, postItem.commentcount);
-    return NUMBER_OF_STATIC_ROWS + commentsCounts;
+    NSInteger row = NUMBER_OF_STATIC_ROWS + commentsCounts;
+    UALog(@"section %ld  rows  %ld  coments %ld   %ld",section, row,commentsCounts,[[postItem comments] count]);
+    return row;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell;    
     NSInteger captionRowOffset = 4;
-    NSInteger commentsRowLimit = captionRowOffset + MAX_NUMBER_OF_COMMENTS;
+    TKPost* postItem = self.posts[indexPath.section];
+    NSInteger commentsCounts = MIN(MAX_NUMBER_OF_COMMENTS, [postItem commentcount]);
+    NSInteger row = NUMBER_OF_STATIC_ROWS + commentsCounts;
+//     NSInteger commentsRowLimit = captionRowOffset + MAX_NUMBER_OF_COMMENTS;
     if (indexPath.row == TK_FEEDTITLE_CELL_ROW) {
         cell = [self feedTitleCellForTableView:tableView atIndexPath:indexPath];
     } else if (indexPath.row == TK_PHOTO_CELL_ROW) {
@@ -237,9 +270,11 @@
         cell = [self captionCellForTableView:tableView atIndexPath:indexPath];
     } else if (indexPath.row == TK_LIKES_CELL_ROW) {
         cell = [self likesCellForTableView:tableView atIndexPath:indexPath];
-    } else if (indexPath.row > TK_LIKES_CELL_ROW && indexPath.row < commentsRowLimit) {
+    } else if (indexPath.row > TK_LIKES_CELL_ROW && indexPath.row < row-1) {
         NSIndexPath *commentIndexPath = [NSIndexPath indexPathForRow:indexPath.row-captionRowOffset inSection:indexPath.section];
+        UALog(@"row  %ld  %ld",indexPath.row,commentIndexPath.row);
         cell = [self commentCellForTableView:tableView atIndexPath:commentIndexPath];
+        
     } else {
         cell = [self userEventCellForTableView:tableView atIndexPath:indexPath];
     }

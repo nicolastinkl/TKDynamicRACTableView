@@ -27,7 +27,9 @@
 #define TK_CAPTION_CELL_ROW 2
 #define TK_LIKES_CELL_ROW 3
 
-#define MAX_NUMBER_OF_COMMENTS 6
+
+#define NUMBER_OF_STATIC_ROWS 5
+#define MAX_NUMBER_OF_COMMENTS 3
 
 static CGFloat const PhotoCellRowHeight = 320;
 static CGFloat const UserActionCellHeight = 44;
@@ -57,11 +59,18 @@ static CGFloat const ContenCellHeight = 30;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat height = 0;
-    NSInteger captionRowOffset = 4;
-    NSInteger commentsRowLimit = captionRowOffset + MAX_NUMBER_OF_COMMENTS;
+//    NSInteger captionRowOffset = 4;
+//    NSInteger commentsRowLimit = captionRowOffset + MAX_NUMBER_OF_COMMENTS;
     
 //    UITableViewCell *cell;
     TKTableViewDataSource *dataSource = (TKTableViewDataSource*)tableView.dataSource;
+    
+    NSInteger captionRowOffset = 4;
+    TKPost* postItem = dataSource.posts[indexPath.section];
+    NSInteger commentsCounts = MIN(MAX_NUMBER_OF_COMMENTS, [postItem commentcount]);
+    NSInteger row = NUMBER_OF_STATIC_ROWS + commentsCounts;
+    
+    
     TKPost * posts = [dataSource postByIndexPath:indexPath];
     if (indexPath.row == TK_FEEDTITLE_CELL_ROW) {
         return UserActionCellHeight;
@@ -73,21 +82,13 @@ static CGFloat const ContenCellHeight = 30;
     } else if (indexPath.row == TK_LIKES_CELL_ROW) {
 //        cell = [dataSource likesCellForTableView:tableView atIndexPath:indexPath];
         return ContenCellHeight;
-    } else if (indexPath.row > TK_LIKES_CELL_ROW && indexPath.row < commentsRowLimit) {
+    } else if (indexPath.row > TK_LIKES_CELL_ROW &&   indexPath.row < row-1) {
         NSIndexPath *commentIndexPath = [NSIndexPath indexPathForRow:indexPath.row-captionRowOffset inSection:indexPath.section];
 //        cell = [dataSource commentCellForTableView:tableView atIndexPath:commentIndexPath];
-        if (posts.comments.count > 0 && commentIndexPath.row > 0) {
-            if (posts.comments.count >commentIndexPath.row) {
-                
-                TKComment * comment = posts.comments[commentIndexPath.row];
-                return [self heightForCell:comment.commentcontent];
-            }
-            return 0.0f;
-        }else{
-            return UserActionCellHeight;
-        }
+        TKComment * comment = posts.comments[commentIndexPath.row];
+        return [self heightForCell:comment.commentcontent];
     } else {
-        return ContenCellHeight;
+        return UserActionCellHeight;
     }
     
 //    [cell setNeedsUpdateConstraints];
@@ -105,7 +106,7 @@ static CGFloat const ContenCellHeight = 30;
     CGSize sizeToFit = [text sizeWithFont:[UIFont systemFontOfSize:16.0f] constrainedToSize:CGSizeMake(maxWidth, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
 #pragma clang diagnostic pop
     
-    return sizeToFit.height + 5.0f ;// fmaxf(20.0f, sizeToFit.height + 5.0f );
+    return sizeToFit.height + 10.0f ;// fmaxf(20.0f, sizeToFit.height + 5.0f );
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -12,6 +12,7 @@
 #import "TKComentCellViewModel.h"
 #import <UIView+AutoLayout.h>
 #import <UALogger.h>
+#import "TKUtilsMacro.h"
 
 static CGFloat STXCommentViewLeadingEdgeInset = 10.f;
 static CGFloat STXCommentViewTrailingEdgeInset = 10.f;
@@ -39,19 +40,18 @@ static NSString *HashTagAndMentionRegex = @"(#|@)(\\w+)";
             NSString *title = [NSString stringWithFormat:NSLocalizedString(@"Show %d comments", nil), totalComments];
             _commentLabel = [self allCommentsLabelWithTitle:title];
         } else {
-              _viewModel = viewmodel;
-            _commentLabel = [self commentLabelWithText:_viewModel.comments.usernickname commenter:_viewModel.comments.commentcontent];
+            _viewModel = viewmodel;
+            NSString * comment = F(@"@%@: %@",_viewModel.comments.usernickname,_viewModel.comments.commentcontent);
+            _commentLabel = [self commentLabelWithText:comment commenter:@""];
         }
         
         [self.contentView addSubview:_commentLabel];
         _commentLabel.translatesAutoresizingMaskIntoConstraints = NO;
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        
     }
     return self;
 }
-
 
 - (instancetype)initWithStyle:(STXCommentCellStyle)style comment:(TKComentCellViewModel *)viewmodel reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -104,7 +104,9 @@ static NSString *HashTagAndMentionRegex = @"(#|@)(\\w+)";
     if (_viewModel != viewModel) {
         _viewModel = viewModel;
         
-        [self setCommentLabel:self.commentLabel text:_viewModel.comments.commentcontent commenter:_viewModel.comments.usernickname];
+         NSString * comment = F(@"@%@: %@",_viewModel.comments.usernickname,_viewModel.comments.commentcontent);
+        
+        [self setCommentLabel:self.commentLabel text:comment commenter:@""];
     }
 }
 
@@ -172,17 +174,17 @@ static NSString *HashTagAndMentionRegex = @"(#|@)(\\w+)";
     return allCommentsLabel;
 }
 
-- (TKAttributedLabel *)commentLabelWithText:(NSString *)text commenter:(NSString *)commenter
+- (TKAttributedLabel *)commentLabelWithText:(NSString *)nick commenter:(NSString *)commenter
 {
-    NSString *trimmedText = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSString *commentText = [[commenter stringByAppendingString:@" "] stringByAppendingString:trimmedText];
-    
+    NSString *trimmedText = [nick stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+    NSString *commentText = [[trimmedText stringByAppendingString:@": "] stringByAppendingString:commenter];
     TKAttributedLabel *commentLabel = [[TKAttributedLabel alloc] initForParagraphStyleWithText:commentText];
     commentLabel.delegate = self;
     commentLabel.numberOfLines = 0;
     commentLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
-    commentLabel.linkAttributes = @{ (NSString *)kCTForegroundColorAttributeName: [UIColor colorWithRed:1.000 green:0.355 blue:0.229 alpha:1.000] };
+    commentLabel.linkAttributes = @{ (NSString *)kCTForegroundColorAttributeName: [UIColor colorWithRed:0.288 green:0.664 blue:1.000 alpha:1.000] };
     NSMutableDictionary *mutableActiveLinkAttributes = [NSMutableDictionary dictionary];
     [mutableActiveLinkAttributes setValue:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];
     [mutableActiveLinkAttributes setValue:(__bridge id)[[UIColor colorWithRed:0.644 green:0.681 blue:0.702 alpha:1.000] CGColor] forKey:(NSString *)kCTForegroundColorAttributeName];
@@ -192,7 +194,7 @@ static NSString *HashTagAndMentionRegex = @"(#|@)(\\w+)";
     
     
     
-    [self setCommentLabel:commentLabel text:text commenter:commenter];
+    [self setCommentLabel:commentLabel text:nick commenter:commenter];
     
     return commentLabel;
 }

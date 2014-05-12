@@ -12,7 +12,7 @@
 #import "TKPost.h"
 
 #define limitCount      10
-#define tag             @"混血猫猫"
+#define tag             @"其他猫猫"
 
 @implementation TKViewControllerModel
 
