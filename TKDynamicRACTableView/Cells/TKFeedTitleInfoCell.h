@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@class TKFeedTitleInfoCellViewModel,RACCommand;
+@class TKFeedTitleInfoCellViewModel,RACCommand,TKFeedTitleInfoCell;
+
+@protocol TKFeedTitleInfoCellDelegate <NSObject>
+
+@optional
+
+- (void)titleCellWillShows:(TKFeedTitleInfoCell *) titleCell;
+
+@end;
 
 @interface TKFeedTitleInfoCell : UITableViewCell
 
@@ -19,5 +27,7 @@
 @property(nonatomic,strong) RACCommand * avaterCommant;
 
 @property (nonatomic) TKFeedTitleInfoCellViewModel *viewModel;
+
+@property (weak, nonatomic) id <TKFeedTitleInfoCellDelegate> delegate;
 
 @end

@@ -39,7 +39,7 @@
 
 @interface TKTableViewDataSource ()
 
-@property (weak, nonatomic) id<TKLikesCellDelegate, TKCaptionCellDelegate, TKCommentCellDelegate>controller;
+@property (weak, nonatomic) id<TKLikesCellDelegate, TKCaptionCellDelegate, TKCommentCellDelegate,TKFeedTitleInfoCellDelegate>controller;
 
 @end
 
@@ -47,7 +47,7 @@
 @implementation TKTableViewDataSource
 
 
-- (instancetype)initWithController:(id<TKLikesCellDelegate, TKCaptionCellDelegate, TKCommentCellDelegate>)controller tableView:(UITableView *)tableView
+- (instancetype)initWithController:(id<TKLikesCellDelegate, TKCaptionCellDelegate, TKCommentCellDelegate,TKFeedTitleInfoCellDelegate>)controller tableView:(UITableView *)tableView
 {
     
     self = [super init];
@@ -68,11 +68,7 @@
     NSString *CellIdentifier = NSStringFromClass([TKFeedTitleInfoCell class]);
     TKFeedTitleInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
-    if (cell.indexPath != nil && cell.indexPath.section != indexPath.section) {
-//        [cell cancelImageLoading];
-    }
-
+    
     cell.indexPath = indexPath;
     
     if (indexPath.section < [self.posts count]) {
@@ -82,6 +78,7 @@
         viewModel.indexPath = indexPath;
         [cell configureWithViewModel:viewModel];
     }
+    cell.delegate = self.controller;
     
     return cell;
 }
@@ -90,12 +87,13 @@
     TKPost * post = self.posts[indexPath.section];
     NSString *CellIdentifier = NSStringFromClass([TKPhotoCell class]);
     TKPhotoCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    TKPhotoCellViewModel * viewmodel = [[TKPhotoCellViewModel alloc] init];
+    viewmodel.posts = post;
+    viewmodel.indexPath = indexPath;
     if (cell == nil) {
-        TKPhotoCellViewModel * viewmodel = [[TKPhotoCellViewModel alloc] init];
-        viewmodel.posts = post;
-        viewmodel.indexPath = indexPath;
         cell = [[TKPhotoCell alloc] initConfigureWithViewModel:viewmodel reuseIdentifier:CellIdentifier];
     }
+    cell.viewModel = viewmodel;
     
     return cell;
 }
@@ -104,12 +102,14 @@
     TKPost * post = self.posts[indexPath.section];
     NSString *CellIdentifier = NSStringFromClass([TKCaptionCell class]);
     TKCaptionCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    TKCaptionCellViewModel * viewmodel = [[TKCaptionCellViewModel alloc] init];
+    viewmodel.posts = post;
+    viewmodel.indexPath = indexPath;
     if (cell == nil) {
-        TKCaptionCellViewModel * viewmodel = [[TKCaptionCellViewModel alloc] init];
-        viewmodel.posts = post;
-        viewmodel.indexPath = indexPath;
+      
         cell = [[TKCaptionCell alloc] initWithCaption:viewmodel reuseIdentifier:CellIdentifier];
     }
+    cell.viewModel = viewmodel;
     
     return cell;
 }
@@ -118,10 +118,10 @@
     TKPost * post = self.posts[indexPath.section];
     TKLikeCell *cell;
     
+    TKLikeCellViewModel *viewmodel = [[TKLikeCellViewModel alloc] init];
+    viewmodel.posts = post;
+    viewmodel.indexPath = indexPath;
     if (cell == nil) {
-        TKLikeCellViewModel *viewmodel = [[TKLikeCellViewModel alloc] init];
-        viewmodel.posts = post;
-        viewmodel.indexPath = indexPath;
         
         NSInteger count = post.likecount;
         if (count > 3 || count == 0) {
@@ -134,9 +134,10 @@
             cell = [[TKLikeCell alloc] initWithStyle:STXLikesCellStyleLikers likes:viewmodel reuseIdentifier:CellIdentifier];
         }
         
-        cell.delegate = self.controller;
-        cell.viewModel = viewmodel;
     }
+    
+    cell.delegate = self.controller;
+    cell.viewModel = viewmodel;
     return cell;
 }
 - (TKComentCell *)commentCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath

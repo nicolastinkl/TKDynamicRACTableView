@@ -12,6 +12,7 @@
 @protocol TKLikesCellDelegate;
 @protocol TKCaptionCellDelegate;
 @protocol TKCommentCellDelegate;
+@protocol TKFeedTitleInfoCellDelegate;
 
 @class TKPhotoCell;
 @class TKCaptionCell;
@@ -27,7 +28,7 @@
 
 -(TKPost *) postByIndexPath:(NSIndexPath *)indexPath;
 
-- (instancetype)initWithController:(id<TKLikesCellDelegate, TKCaptionCellDelegate, TKCommentCellDelegate>)controller tableView:(UITableView *)tableView;
+- (instancetype)initWithController:(id<TKLikesCellDelegate, TKCaptionCellDelegate, TKCommentCellDelegate,TKFeedTitleInfoCellDelegate>)controller tableView:(UITableView *)tableView;
 
 - (TKFeedTitleInfoCell *)feedTitleCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath;
 - (TKPhotoCell *)photoCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath;

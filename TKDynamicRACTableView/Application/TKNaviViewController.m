@@ -31,7 +31,7 @@ CGFloat const MMDrawerDefaultShadowOpacity = 0.5;
 @end
 
 static CGFloat offset_float = 0.55;// Stretching parameters
-static CGFloat min_distance = 160;// The minimum distance Rebound
+static CGFloat min_distance = 100;// The minimum distance Rebound
 
 @implementation TKNaviViewController
 

@@ -60,9 +60,10 @@
     if (_viewModel != viewModel) {
         _viewModel = viewModel;
         UIImageView * imageview = [self.contentView subviewWithTag:1];
+
+        NSURL *imageURL = [NSURL URLWithString:[viewModel.posts imageURLWithmoment:@""]]; 
         @weakify(imageview)
-        NSURL *imageURL = [NSURL URLWithString:[viewModel.posts imageURLWithmoment:@""]];
-        @weakify(self);
+         @weakify(self);
         [imageview setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"photo_browser"] options:SDWebImageRetryFailed completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
             @strongify(self);
             [self log];

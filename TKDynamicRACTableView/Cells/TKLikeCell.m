@@ -186,7 +186,7 @@ static CGFloat STXLikesViewTrailingEdgeInset = 10.f;
     likersLabel.lineBreakMode = NSLineBreakByWordWrapping;
     likersLabel.delegate = self;
     
-    likersLabel.linkAttributes = @{ (NSString *)kCTForegroundColorAttributeName: [UIColor colorWithRed:0.288 green:0.664 blue:1.000 alpha:1.000], (NSString *)kCTFontAttributeName: [UIFont boldSystemFontOfSize:16],
+    likersLabel.linkAttributes = @{ (NSString *)kCTForegroundColorAttributeName: [UIColor colorWithRed:0.288 green:0.664 blue:1.000 alpha:1.000], (NSString *)kCTFontAttributeName: [UIFont systemFontOfSize:16],
                                      (NSString *)kCTUnderlineStyleAttributeName : @(kCTUnderlineStyleNone) };
     NSMutableDictionary *mutableActiveLinkAttributes = [NSMutableDictionary dictionary];
     [mutableActiveLinkAttributes setValue:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];

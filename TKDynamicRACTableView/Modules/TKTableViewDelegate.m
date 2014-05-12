@@ -85,8 +85,13 @@ static CGFloat const ContenCellHeight = 30;
     } else if (indexPath.row > TK_LIKES_CELL_ROW &&   indexPath.row < row-1) {
         NSIndexPath *commentIndexPath = [NSIndexPath indexPathForRow:indexPath.row-captionRowOffset inSection:indexPath.section];
 //        cell = [dataSource commentCellForTableView:tableView atIndexPath:commentIndexPath];
-        TKComment * comment = posts.comments[commentIndexPath.row];
-        return [self heightForCell:comment.commentcontent];
+        if (posts.comments.count > commentIndexPath.row) {
+            
+            TKComment * comment = posts.comments[commentIndexPath.row];
+            return [self heightForCell:comment.commentcontent];
+        }else{
+            return 0.0f;
+        }
     } else {
         return UserActionCellHeight;
     }

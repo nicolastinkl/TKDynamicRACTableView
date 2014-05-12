@@ -140,7 +140,7 @@ static NSString *HashTagAndMentionRegex = @"(#|@|##)(\\w+)";
     captionLabel.delegate = self;
     captionLabel.userInteractionEnabled = YES;
     
-    captionLabel.linkAttributes = @{ (NSString *)kCTForegroundColorAttributeName: [UIColor colorWithRed:0.288 green:0.664 blue:1.000 alpha:1.000], (NSString *)kCTFontAttributeName: [UIFont boldSystemFontOfSize:16],
+    captionLabel.linkAttributes = @{ (NSString *)kCTForegroundColorAttributeName: [UIColor colorWithRed:0.288 green:0.664 blue:1.000 alpha:1.000], (NSString *)kCTFontAttributeName: [UIFont systemFontOfSize:16],
                                      (NSString *)kCTUnderlineStyleAttributeName : @(kCTUnderlineStyleNone) };
     //    captionLabel.activeLinkAttributes = captionLabel.linkAttributes;
     

@@ -27,12 +27,14 @@
 #import "TKComentCell.h"
 #import "TKLikeCell.h"
 #import "TKUserEventCell.h"
+#import "TKFeedTitleInfoCellViewModel.h"
 
-@interface TKViewController ()<TKLikesCellDelegate, TKCaptionCellDelegate, TKCommentCellDelegate>
+@interface TKViewController ()<TKLikesCellDelegate, TKCaptionCellDelegate, TKCommentCellDelegate,TKFeedTitleInfoCellDelegate>
 @property (nonatomic) TKViewControllerModel *viewModel;
 
 @property (strong, nonatomic) TKTableViewDataSource *tableViewDataSource;
 @property (strong, nonatomic) TKTableViewDelegate *tableViewDelegate;
+@property (nonatomic) RACCommand *rightButtonCommand;
 
 @end
 
@@ -53,7 +55,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.title = @"英国短毛";
+    self.title = @"龙猫";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [self.tableView addSubview:refreshControl];
@@ -97,7 +99,7 @@
         [[self.viewModel fetchMorePosts] subscribeNext:^(NSArray * posts) {
             UALog(@"fetch more");
             if (!posts.count) {
-                [SVProgressHUD showErrorWithStatus:@"没有更多了"];
+                [SVProgressHUD showErrorWithStatus:@"No more"];
             } else {
                 NSMutableArray *mutablePins = [NSMutableArray arrayWithArray:self.viewModel.post];
                 [mutablePins addObjectsFromArray:posts];
@@ -110,13 +112,46 @@
         [self.tableView triggerInfiniteScrolling];
     });
     
-          
+    UIBarButtonItem * rightitem  = [[UIBarButtonItem alloc] init];
+    [rightitem setTitle:@"info"];
+    rightitem.style = UIBarButtonItemStyleDone;
+    rightitem.rac_command = [self rightButtonCommand];
+    self.navigationItem.rightBarButtonItem = rightitem;
+}
+
+
+#pragma mark - Accessors
+- (RACCommand *) rightButtonCommand
+{
+    if (!_rightButtonCommand) {
+        @weakify(self);
+        _rightButtonCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *button) {
+            return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                @strongify(self);
+                
+                UIViewController <TKDetailsViewControllerProtocol>* viewController = [[JSObjection defaultInjector] getObject:@protocol(TKDetailsViewControllerProtocol)];
+                [viewController configureWithModel:self.viewModel];
+                viewController.title = @"target navi";
+                [self.navigationController pushViewController:viewController animated:YES];
+                [subscriber sendCompleted];
+                return nil;
+            }];
+        }];
+    }
+    return _rightButtonCommand;
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     self.viewModel.active = YES;
+}
+
+- (void)titleCellWillShows:(TKFeedTitleInfoCell *) titleCell
+{
+    UIViewController <TKDetailsViewControllerProtocol>* viewController = [[JSObjection defaultInjector] getObject:@protocol(TKDetailsViewControllerProtocol)];
+    viewController.title = titleCell.viewModel.posts.usernickname;
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 -(void) reload

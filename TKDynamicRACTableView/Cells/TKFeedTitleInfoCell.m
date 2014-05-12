@@ -17,6 +17,8 @@
 #import "TKCategroiesTool.h"
 #import <MHPrettyDate.h>
 #import <UALogger.h>
+#import "TKProtocol.h"
+#import <RACEXTScope.h>
 
 @interface TKFeedTitleInfoCell ()
 
@@ -47,20 +49,26 @@
 {
     self.viewModel = viewModel;
     
+    @weakify(self);
     //CMD
     self.avaterCommant = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        return [RACSignal empty]; // target
+            @strongify(self);
+            return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                [subscriber sendCompleted];
+                [self performSelectorDelete];
+                return nil;
+            }];
         
     }];
-    /* // -executionSignals returns a signal that includes the signals returned from
+    // -executionSignals returns a signal that includes the signals returned from
      // the above block, one for each time the command is executed.
-     [_oKComment.executionSignals subscribeNext:^(RACSignal *loginSignal) {
+     [self.avaterCommant.executionSignals subscribeNext:^(RACSignal *loginSignal) {
      // Log a message whenever we log in successfully.
-     [loginSignal subscribeCompleted:^{
-     NSLog(@"Logged in successfully!");
+         [loginSignal subscribeCompleted:^{
+             NSLog(@"click in successfully!");
+         }];
      }];
-     }];
-     
+     /*
      [_oKComment.executing subscribeNext:^(RACSignal *loginSignal) {
      // Log a message whenever we log in successfully.
      //        loginSignal subscribe:(id<RACSubscriber>)
@@ -75,5 +83,10 @@
     
 }
 
+-(void) performSelectorDelete
+{
+    if ([self.delegate respondsToSelector:@selector(titleCellWillShows:)])
+        [self.delegate titleCellWillShows:self];
+}
 
 @end

@@ -12,12 +12,13 @@
 @protocol TKLikesCellDelegate;
 @protocol TKCaptionCellDelegate;
 @protocol TKCommentCellDelegate;
+@protocol TKFeedTitleInfoCellDelegate;
 
 @interface TKTableViewDelegate : NSObject<UITableViewDelegate>
 
 @property (nonatomic) BOOL insertingRow;
 
-- (instancetype)initWithController:(id<TKLikesCellDelegate, TKCaptionCellDelegate, TKCommentCellDelegate>)controller;
+- (instancetype)initWithController:(id<TKLikesCellDelegate, TKCaptionCellDelegate, TKCommentCellDelegate,TKFeedTitleInfoCellDelegate>)controller;
 
 - (void)reloadAtIndexPath:(NSIndexPath *)indexPath forTableView:(UITableView *)tableView;
 
