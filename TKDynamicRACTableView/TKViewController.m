@@ -54,7 +54,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.title = @"英国短毛";
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [self.tableView addSubview:refreshControl];
     

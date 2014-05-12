@@ -16,6 +16,7 @@
 #import "TKPost.h"
 #import "TKCategroiesTool.h"
 #import <MHPrettyDate.h>
+#import <UALogger.h>
 
 @interface TKFeedTitleInfoCell ()
 
@@ -67,8 +68,7 @@
      NSLog(@"Logged in executing!");
      }];*/
     [self.avaterImageButton setRac_command:self.avaterCommant];
-    
-//    [self.avaterImageButton setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:F(@"%@",[self.viewModel.posts imageURLWithmoment:@"avater"])] placeholderImage:[UIImage imageNamed:@"avater"]];
+     [self.avaterImageButton setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:F(@"%@",[self.viewModel.posts imageURLWithUser])] placeholderImage:[UIImage imageNamed:@"avater"]];
     self.profileNickLabel.text = F(@"%@",self.viewModel.posts.usernickname);
     
     self.dateLabel.textColor = [UIColor colorWithWhite:0.595 alpha:0.860];

@@ -30,7 +30,7 @@
 #define RectSetY(f, y)                      CGRectMake(RectX(f), y, RectWidth(f), RectHeight(f))
 #define RectSetSize(f, w, h)                CGRectMake(RectX(f), RectY(f), w, h)
 #define RectSetOrigin(f, x, y)              CGRectMake(x, y, RectWidth(f), RectHeight(f))
-#define RectSetOriginWH(x, w, h)            CGRectMake(x, 10, w, h)
+#define RectSetOriginWH(x, w, h)            CGRectMake(x, 5, w, h)
 #define RectSetOriginXYWH(x,y, w, h)            CGRectMake(x, y, w, h)
 
 #define RGB(r, g, b)                        [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]

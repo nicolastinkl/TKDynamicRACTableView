@@ -35,7 +35,7 @@
         UIImageView * imageview = [[UIImageView alloc] init];
         imageview.contentMode = UIViewContentModeScaleAspectFit;
 //        imageview.backgroundColor = [UIColor randomHSBColor];
-        imageview.frame = CGRectMake(0, 0, 320, 320);
+        imageview.frame = CGRectMake(10, 5, 300, 300);
         imageview.tag = 1;
         imageview.clipsToBounds = YES;
         [self.contentView addSubview:imageview];

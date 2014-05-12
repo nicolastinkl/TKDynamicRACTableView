@@ -34,8 +34,25 @@
     return YES;
 }
 
+/*!
+ *   @return http://petta-moment.qiniudn.com/1399690172226_moment_3457.jpg-moment.petta
+ *
+ *  @param momenttoken <#momenttoken description#>
+ *
+ *  @return <#return value description#>
+ */
 - (NSString *)imageURLWithmoment:(NSString *) momenttoken
 {
     return F(@"%@-%@",self.momenturl, testIMAGEURLToken);
 }
+
+/*!
+ *  http://petta-photo.qiniudn.com/user_photo_24653.jpg
+ *
+ */
+- (NSString *)imageURLWithUser
+{
+    return F(@"http://petta-photo.qiniudn.com/user_photo_%ld.jpg",self.userid);
+}
+
 @end

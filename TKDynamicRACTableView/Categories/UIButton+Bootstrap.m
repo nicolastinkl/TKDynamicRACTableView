@@ -16,10 +16,10 @@
     self.layer.cornerRadius = 4.0;
     self.layer.masksToBounds = YES;
     [self setAdjustsImageWhenHighlighted:NO];
-    self.layer.borderColor = [ios7BlueColor CGColor];
+    self.layer.borderColor = [[UIColor colorWithRed:0.541 green:0.548 blue:0.553 alpha:1.000] CGColor];
     self.backgroundColor = [UIColor clearColor];
-    [self setTitleColor:ios7BlueColor forState:UIControlStateNormal];
-    [self setBackgroundImage:[self buttonImageFromColor:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0]] forState:UIControlStateHighlighted];
+    [self setTitleColor:[UIColor colorWithRed:0.541 green:0.548 blue:0.553 alpha:1.000] forState:UIControlStateNormal];
+    [self setBackgroundImage:[self buttonImageFromColor:[UIColor colorWithRed:0.541 green:0.548 blue:0.553 alpha:1.000]] forState:UIControlStateHighlighted];
 }
 
 -(void)sendMessageClearStyle

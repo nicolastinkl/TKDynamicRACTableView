@@ -32,5 +32,5 @@
 
 
 - (NSString *)imageURLWithmoment:(NSString *) momenttoken;
-
+- (NSString *)imageURLWithUser;
 @end

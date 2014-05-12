@@ -124,7 +124,7 @@
         viewmodel.indexPath = indexPath;
         
         NSInteger count = post.likecount;
-        if (count > 2) {
+        if (count > 3 || count == 0) {
             static NSString *CellIdentifier = @"TKLikesCountCell";
             cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             cell = [[TKLikeCell alloc] initWithStyle:STXLikesCellStyleLikesCount likes:viewmodel reuseIdentifier:CellIdentifier];
@@ -250,7 +250,7 @@
     TKPost* postItem = self.posts[section];
     NSInteger commentsCounts = MIN(MAX_NUMBER_OF_COMMENTS, [postItem commentcount]);
     NSInteger row = NUMBER_OF_STATIC_ROWS + commentsCounts;
-    UALog(@"section %ld  rows  %ld  coments %ld   %ld",section, row,commentsCounts,[[postItem comments] count]);
+//    UALog(@"section %ld  rows  %ld  coments %ld   %ld",section, row,commentsCounts,[[postItem comments] count]);
     return row;
 }
 
@@ -272,15 +272,16 @@
         cell = [self likesCellForTableView:tableView atIndexPath:indexPath];
     } else if (indexPath.row > TK_LIKES_CELL_ROW && indexPath.row < row-1) {
         NSIndexPath *commentIndexPath = [NSIndexPath indexPathForRow:indexPath.row-captionRowOffset inSection:indexPath.section];
-        UALog(@"row  %ld  %ld",indexPath.row,commentIndexPath.row);
+//        UALog(@"row  %ld  %ld",indexPath.row,commentIndexPath.row);
         cell = [self commentCellForTableView:tableView atIndexPath:commentIndexPath];
         
     } else {
         cell = [self userEventCellForTableView:tableView atIndexPath:indexPath];
+        if ([cell respondsToSelector:@selector(separatorInset)]) {
+            cell.separatorInset = UIEdgeInsetsZero;
+        }
     }
-    if ([tableView respondsToSelector:@selector(separatorInset)]) {
-        tableView.separatorInset = UIEdgeInsetsZero;
-    }
+   
     
     return cell;
 }
