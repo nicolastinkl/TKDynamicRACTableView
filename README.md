@@ -1,6 +1,8 @@
 # TKDynamicRACTableView
   
-![Mou icon](http://TK.u.qiniudn.com/Ft1txuOsaWMKDg5T)
+![Mou icon](http://images.cnblogs.com/cnblogs_com/tinkl/253133/o_2445FE59-4074-4301-B423-A362740C3FBC.png)
+
+image link <http://images.cnblogs.com/cnblogs_com/tinkl/253133/o_2445FE59-4074-4301-B423-A362740C3FBC.png>
 
 ## Requirements
 
@@ -28,9 +30,76 @@ or see blogs <http://www.cnblogs.com/tinkl/>
 
 Just see this:
 
+NetWork with Get request:
 
-~~change~~
+```
+- (RACSignal *)fetchPostsWithURL:(NSString *)urlString
+{
+    return [[self rac_GET:urlString parameters:nil] map:^id(NSDictionary *data) {
+        return [[((NSArray *)data[@"moments"]).rac_sequence map:^id(id value) {
+            return [[TKPost alloc] initWithDictionary:value error:nil];
+        }] array];
+    }];
+}
+```
 
+Post request:
+
+```
+- (RACSignal *)fetchPostsWithPost:(NSMutableDictionary * ) params
+{
+    UALog(@"send json:  %@",params);
+     /*     return [[self rac_GET:@"http://api.huaban.com/fm/wallpaper/tags" parameters:nil] map:^id(NSArray *tags) {
+     return [[tags.rac_sequence map:^id(id value) {
+     return value;
+     }] array];
+     }]; // test ok
+      */
+    return [[[[self rac_POST:@"http://api.petta.mobi/api.do" parameters:params] map:^id(id posts) {
+        /*!
+         *  reponse code 200
+         */
+        UALogFull(@" reponse code 200 ");
+        if (posts) {
+            UALog(@"response message : %@",posts[@"response"][@"response_msg"]);
+        }
+        if (posts && [posts[@"response"][@"response_code"] intValue] == 0) {
+            NSArray * moments = posts[@"moments"];
+            UALog(@"moments %lu",(unsigned long)moments.count);
+            return  [[moments.rac_sequence map:^id(id value) {                
+                TKPost * post = [[TKPost alloc] initWithDictionary:value error:nil];
+                post.posttype = @"singleimage";
+                return post;
+            }] array];
+        }else{
+            /*!
+             *  error  maybe network error
+             */
+            return @[];
+        }
+    }]  catch:^RACSignal *(NSError *error) {
+        return [RACSignal error:error];
+    }] replayLazily];
+}
+```
+
+
+Data init :
+
+```
+  @weakify(self);
+    [RACObserve(self, viewModel.post) subscribeNext:^(NSArray * posts) {
+        @strongify(self);
+        if (posts.count > 0) {
+                    
+            self.tableViewDataSource.posts = [posts copy];
+            
+            [self.tableView reloadData];
+        }else{
+            UALog(@"NO data");
+        }
+    }];
+```
 
 ####  Features
 
@@ -52,7 +121,13 @@ Just see this:
 
 
 #### Changelog
-
+1.0.0 - 2014/05/12
+-----------------
+1. Add ReactiveViewModel ,ReactiveCocoa , Objection.....
+2. Add (MVVM) .
+![Mou icon](https://f.cloud.github.com/assets/432536/867984/291ed380-f760-11e2-9106-d3158320af39.png)
+3. Add JsonModel
+4. add UIView-AutoLayout
 
 
 1.0.0 - 2014/02/04
