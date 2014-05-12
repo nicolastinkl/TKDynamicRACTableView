@@ -49,12 +49,6 @@ Post request:
 - (RACSignal *)fetchPostsWithPost:(NSMutableDictionary * ) params
 {
     UALog(@"send json:  %@",params);
-     /*     return [[self rac_GET:@"http://api.huaban.com/fm/wallpaper/tags" parameters:nil] map:^id(NSArray *tags) {
-     return [[tags.rac_sequence map:^id(id value) {
-     return value;
-     }] array];
-     }]; // test ok
-      */
     return [[[[self rac_POST:@"http://api.petta.mobi/api.do" parameters:params] map:^id(id posts) {
         /*!
          *  reponse code 200
